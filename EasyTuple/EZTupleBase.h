@@ -1,5 +1,5 @@
 //
-//  ZTupleBase.h
+//  EZTupleBase.h
 //  Expecta
 //
 //  Created by Chengwei Zang on 2017/8/3.
@@ -7,19 +7,19 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ZTupleBase : NSObject <NSCopying, NSFastEnumeration>
+@interface EZTupleBase : NSObject <NSCopying, NSFastEnumeration>
 
 @property (nonatomic, assign) NSUInteger hashValue;
 @property (nonatomic, assign, readonly) NSUInteger count;
 
 + (instancetype)tupleWithArray:(NSArray *)array;
-+ (__kindof ZTupleBase *)tupleWithCount:(NSUInteger)count;
++ (__kindof EZTupleBase *)tupleWithCount:(NSUInteger)count;
 
 - (id)objectAtIndexedSubscript:(NSUInteger)idx;
 - (void)setObject:(id)obj atIndexedSubscript:(NSUInteger)idx;
-- (__kindof ZTupleBase *)join:(ZTupleBase *)other;
-- (__kindof ZTupleBase *)take:(NSUInteger)count;
-- (__kindof ZTupleBase *)drop:(NSUInteger)count;
+- (__kindof EZTupleBase *)join:(EZTupleBase *)other;
+- (__kindof EZTupleBase *)take:(NSUInteger)count;
+- (__kindof EZTupleBase *)drop:(NSUInteger)count;
 - (NSArray *)allObjects;
 
 @end

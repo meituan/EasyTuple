@@ -10,41 +10,37 @@
 		2249BD281F3713A400E918A0 /* ZTupleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* ZTupleTests.m */; };
 		2249BD2C1F3714A500E918A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2249BD2B1F3714A500E918A0 /* Foundation.framework */; };
 		2249BD2E1F3714B900E918A0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2249BD2D1F3714B900E918A0 /* XCTest.framework */; };
-		383D629DBC642B3E769FDAA6 /* Pods_ZTuple_iOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E7FBB28340FB95784A2362E /* Pods_ZTuple_iOS_Tests.framework */; };
 		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BC195388D20070C39A /* ZTupleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* ZTupleTests.m */; };
-		F886084412CDEFF1FDA8C8FA /* Pods_ZTuple_macOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A861D1581FEFFECE54FF62 /* Pods_ZTuple_macOS_Tests.framework */; };
+		610D965BC055BD8A2908B6BC /* Pods_ZTuple_macOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A0EAD10863E3F8D00C9C113 /* Pods_ZTuple_macOS_Tests.framework */; };
+		F6154C4BD95C0D82A8FA896A /* Pods_ZTuple_iOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A8A8A95565FB1512C7E590 /* Pods_ZTuple_iOS_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0C9A399F4BF5DA6BB9917B68 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		222734831F376EBF00B08478 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		2249BD201F37136600E918A0 /* ZTuple_macOS_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZTuple_macOS_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2249BD291F37149900E918A0 /* Pods_ZTuple_Tests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_ZTuple_Tests.framework; path = "Pods/../build/Debug-iphoneos/Pods_ZTuple_Tests.framework"; sourceTree = "<group>"; };
 		2249BD2B1F3714A500E918A0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		2249BD2D1F3714B900E918A0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		2249BD2F1F372E1C00E918A0 /* MacTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MacTests-Info.plist"; sourceTree = "<group>"; };
 		2249BD301F372E1C00E918A0 /* iOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOSTests-Info.plist"; sourceTree = "<group>"; };
 		229641851F5004B000D23822 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
-		27834AB9881D13B2AB1568E4 /* Pods-ZTuple_iOS_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZTuple_iOS_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZTuple_iOS_Tests/Pods-ZTuple_iOS_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		53DF17CF33F8F4F42FBEEF38 /* Pods-ZTuple_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZTuple_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZTuple_Tests/Pods-ZTuple_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		5A0EAD10863E3F8D00C9C113 /* Pods_ZTuple_macOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZTuple_macOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6003F5AE195388D20070C39A /* ZTuple_iOS_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZTuple_iOS_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6003F5BB195388D20070C39A /* ZTupleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTupleTests.m; sourceTree = "<group>"; };
-		6118EA80B8D64FCC620A0A96 /* Pods-ZTuple_macOS_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZTuple_macOS_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZTuple_macOS_Tests/Pods-ZTuple_macOS_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		8E7FBB28340FB95784A2362E /* Pods_ZTuple_iOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZTuple_iOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C0758345232D66776293D7B /* ZTuple.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = ZTuple.podspec; path = ../ZTuple.podspec; sourceTree = "<group>"; };
-		A5A861D1581FEFFECE54FF62 /* Pods_ZTuple_macOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZTuple_macOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		64A8A8A95565FB1512C7E590 /* Pods_ZTuple_iOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZTuple_iOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D6B1F845E0C4896AF40F9ED /* Pods-ZTuple_iOS_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZTuple_iOS_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZTuple_iOS_Tests/Pods-ZTuple_iOS_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		A76F26F2E35C083B94F52087 /* Pods-ZTuple_iOS_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZTuple_iOS_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZTuple_iOS_Tests/Pods-ZTuple_iOS_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		AA581F5954A193AE4748EE97 /* Pods-ZTuple_macOS_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZTuple_macOS_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZTuple_macOS_Tests/Pods-ZTuple_macOS_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B7CF5155190F40A85A0F7468 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		D4BA6ACBF44E4FCAD188C971 /* Pods-ZTuple_iOS_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZTuple_iOS_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZTuple_iOS_Tests/Pods-ZTuple_iOS_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		DEDF155E7249120C5DCAE5B3 /* Pods_ZTuple_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZTuple_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F76864712C086C4229CB23BD /* Pods-ZTuple_macOS_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZTuple_macOS_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZTuple_macOS_Tests/Pods-ZTuple_macOS_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		FEF49E7F8B4BB0B09F84E1D7 /* Pods-ZTuple_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZTuple_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZTuple_Tests/Pods-ZTuple_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		CE4652132092D1090036381C /* EasyTuple.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; name = EasyTuple.podspec; path = ../EasyTuple.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		E5D56C3231A9F3195192C005 /* Pods-ZTuple_macOS_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZTuple_macOS_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZTuple_macOS_Tests/Pods-ZTuple_macOS_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +50,7 @@
 			files = (
 				2249BD2E1F3714B900E918A0 /* XCTest.framework in Frameworks */,
 				2249BD2C1F3714A500E918A0 /* Foundation.framework in Frameworks */,
-				F886084412CDEFF1FDA8C8FA /* Pods_ZTuple_macOS_Tests.framework in Frameworks */,
+				610D965BC055BD8A2908B6BC /* Pods_ZTuple_macOS_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,7 +61,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				383D629DBC642B3E769FDAA6 /* Pods_ZTuple_iOS_Tests.framework in Frameworks */,
+				F6154C4BD95C0D82A8FA896A /* Pods_ZTuple_iOS_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,7 +76,7 @@
 				6003F5B5195388D20070C39A /* Tests */,
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
-				970C4B1004DE6E5A31545F9A /* Pods */,
+				6A252BCAC990D01B3CCAD726 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,14 +94,12 @@
 			children = (
 				2249BD2D1F3714B900E918A0 /* XCTest.framework */,
 				2249BD2B1F3714A500E918A0 /* Foundation.framework */,
-				2249BD291F37149900E918A0 /* Pods_ZTuple_Tests.framework */,
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				DEDF155E7249120C5DCAE5B3 /* Pods_ZTuple_Tests.framework */,
-				A5A861D1581FEFFECE54FF62 /* Pods_ZTuple_macOS_Tests.framework */,
-				8E7FBB28340FB95784A2362E /* Pods_ZTuple_iOS_Tests.framework */,
+				64A8A8A95565FB1512C7E590 /* Pods_ZTuple_iOS_Tests.framework */,
+				5A0EAD10863E3F8D00C9C113 /* Pods_ZTuple_macOS_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -131,7 +125,7 @@
 		60FF7A9C1954A5C5007DD14C /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				9C0758345232D66776293D7B /* ZTuple.podspec */,
+				CE4652132092D1090036381C /* EasyTuple.podspec */,
 				0C9A399F4BF5DA6BB9917B68 /* README.md */,
 				229641851F5004B000D23822 /* CHANGELOG.md */,
 				B7CF5155190F40A85A0F7468 /* LICENSE */,
@@ -139,15 +133,13 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		970C4B1004DE6E5A31545F9A /* Pods */ = {
+		6A252BCAC990D01B3CCAD726 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				FEF49E7F8B4BB0B09F84E1D7 /* Pods-ZTuple_Tests.debug.xcconfig */,
-				53DF17CF33F8F4F42FBEEF38 /* Pods-ZTuple_Tests.release.xcconfig */,
-				F76864712C086C4229CB23BD /* Pods-ZTuple_macOS_Tests.debug.xcconfig */,
-				6118EA80B8D64FCC620A0A96 /* Pods-ZTuple_macOS_Tests.release.xcconfig */,
-				D4BA6ACBF44E4FCAD188C971 /* Pods-ZTuple_iOS_Tests.debug.xcconfig */,
-				27834AB9881D13B2AB1568E4 /* Pods-ZTuple_iOS_Tests.release.xcconfig */,
+				A76F26F2E35C083B94F52087 /* Pods-ZTuple_iOS_Tests.debug.xcconfig */,
+				6D6B1F845E0C4896AF40F9ED /* Pods-ZTuple_iOS_Tests.release.xcconfig */,
+				E5D56C3231A9F3195192C005 /* Pods-ZTuple_macOS_Tests.debug.xcconfig */,
+				AA581F5954A193AE4748EE97 /* Pods-ZTuple_macOS_Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -159,12 +151,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2249BD271F37136600E918A0 /* Build configuration list for PBXNativeTarget "ZTuple_macOS_Tests" */;
 			buildPhases = (
-				8C4C08EE2E0AE834A727F768 /* [CP] Check Pods Manifest.lock */,
+				12F441DB10728949B8796573 /* [CP] Check Pods Manifest.lock */,
 				2249BD1C1F37136600E918A0 /* Sources */,
 				2249BD1D1F37136600E918A0 /* Frameworks */,
 				2249BD1E1F37136600E918A0 /* Resources */,
-				31E09986DB0D7F3FD451EF8A /* [CP] Embed Pods Frameworks */,
-				C63DF1BD86AB463D0B3AE085 /* [CP] Copy Pods Resources */,
+				3FC09D4F5B45842FAB3021D5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -179,12 +170,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6003F5C2195388D20070C39A /* Build configuration list for PBXNativeTarget "ZTuple_iOS_Tests" */;
 			buildPhases = (
-				986616B4877DAE4162CFC40F /* [CP] Check Pods Manifest.lock */,
+				FD28003F6202D90E88ACF9C4 /* [CP] Check Pods Manifest.lock */,
 				6003F5AA195388D20070C39A /* Sources */,
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
-				1807A7331BF98AB7AD07C607 /* [CP] Embed Pods Frameworks */,
-				6322FCDAE2F26827D4EF8317 /* [CP] Copy Pods Resources */,
+				DC88848D793D9E943ADA1654 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -202,12 +192,16 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = Z;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = WilliamZang;
 				TargetAttributes = {
 					2249BD1F1F37136600E918A0 = {
 						CreatedOnToolsVersion = 9.0;
-						DevelopmentTeam = 97MVDYKCHQ;
+						DevelopmentTeam = Q5BGL2788X;
+						ProvisioningStyle = Automatic;
+					};
+					6003F5AD195388D20070C39A = {
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -248,94 +242,88 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1807A7331BF98AB7AD07C607 /* [CP] Embed Pods Frameworks */ = {
+		12F441DB10728949B8796573 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZTuple_macOS_Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZTuple_iOS_Tests/Pods-ZTuple_iOS_Tests-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		31E09986DB0D7F3FD451EF8A /* [CP] Embed Pods Frameworks */ = {
+		3FC09D4F5B45842FAB3021D5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ZTuple_macOS_Tests/Pods-ZTuple_macOS_Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/EasyTuple-macOS/EasyTuple.framework",
+				"${BUILT_PRODUCTS_DIR}/Expecta-macOS/Expecta.framework",
+				"${BUILT_PRODUCTS_DIR}/OCMock-macOS/OCMock.framework",
+				"${BUILT_PRODUCTS_DIR}/Specta-macOS/Specta.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EasyTuple.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Expecta.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OCMock.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Specta.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZTuple_macOS_Tests/Pods-ZTuple_macOS_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6322FCDAE2F26827D4EF8317 /* [CP] Copy Pods Resources */ = {
+		DC88848D793D9E943ADA1654 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ZTuple_iOS_Tests/Pods-ZTuple_iOS_Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/EasyTuple-iOS/EasyTuple.framework",
+				"${BUILT_PRODUCTS_DIR}/Expecta-iOS/Expecta.framework",
+				"${BUILT_PRODUCTS_DIR}/OCMock-iOS/OCMock.framework",
+				"${BUILT_PRODUCTS_DIR}/Specta-iOS/Specta.framework",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EasyTuple.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Expecta.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OCMock.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Specta.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZTuple_iOS_Tests/Pods-ZTuple_iOS_Tests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZTuple_iOS_Tests/Pods-ZTuple_iOS_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8C4C08EE2E0AE834A727F768 /* [CP] Check Pods Manifest.lock */ = {
+		FD28003F6202D90E88ACF9C4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZTuple_iOS_Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		986616B4877DAE4162CFC40F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		C63DF1BD86AB463D0B3AE085 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZTuple_macOS_Tests/Pods-ZTuple_macOS_Tests-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -362,7 +350,7 @@
 /* Begin XCBuildConfiguration section */
 		2249BD251F37136600E918A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F76864712C086C4229CB23BD /* Pods-ZTuple_macOS_Tests.debug.xcconfig */;
+			baseConfigurationReference = E5D56C3231A9F3195192C005 /* Pods-ZTuple_macOS_Tests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -379,9 +367,10 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 97MVDYKCHQ;
+				DEVELOPMENT_TEAM = Q5BGL2788X;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -393,13 +382,14 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.williamzang.ZTuple-macOS-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
 		2249BD261F37136600E918A0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6118EA80B8D64FCC620A0A96 /* Pods-ZTuple_macOS_Tests.release.xcconfig */;
+			baseConfigurationReference = AA581F5954A193AE4748EE97 /* Pods-ZTuple_macOS_Tests.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -416,10 +406,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 97MVDYKCHQ;
+				DEVELOPMENT_TEAM = Q5BGL2788X;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -434,6 +425,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.williamzang.ZTuple-macOS-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -450,12 +442,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -502,12 +496,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -537,8 +533,11 @@
 		};
 		6003F5C3195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D4BA6ACBF44E4FCAD188C971 /* Pods-ZTuple_iOS_Tests.debug.xcconfig */;
+			baseConfigurationReference = A76F26F2E35C083B94F52087 /* Pods-ZTuple_iOS_Tests.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/System/Library/Frameworks",
 					"$(inherited)",
@@ -553,14 +552,18 @@
 				INFOPLIST_FILE = "Supporting Files/iOSTests-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
 		6003F5C4195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 27834AB9881D13B2AB1568E4 /* Pods-ZTuple_iOS_Tests.release.xcconfig */;
+			baseConfigurationReference = 6D6B1F845E0C4896AF40F9ED /* Pods-ZTuple_iOS_Tests.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/System/Library/Frameworks",
 					"$(inherited)",
@@ -571,6 +574,7 @@
 				INFOPLIST_FILE = "Supporting Files/iOSTests-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;

@@ -5,6 +5,6 @@
 #import <Specta/Specta.h>
 #import <Expecta/Expecta.h>
 #import <OCMock/OCMock.h>
-#import <ZTuple/ZTuple.h>
+#import <EasyTuple/EasyTuple.h>
 
 #endif

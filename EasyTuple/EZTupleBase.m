@@ -1,65 +1,65 @@
 //
-//  ZTupleBase.m
+//  EZTupleBase.m
 //  Expecta
 //
 //  Created by Chengwei Zang on 2017/8/3.
 //
 
-#import "ZTupleBase.h"
-#import "ZTupleSubClasses.h"
-#import "ZMetaMacros.h"
+#import "EZTupleBase.h"
+#import "EZTupleSubClasses.h"
+#import "EZMetaMacros.h"
 #include "string.h"
 @import ObjectiveC.runtime;
 
-#define Z_SETTER_FUNC_DEF(index)                                                                                               \
-static void Z_CONCAT(setter, index)(Z_CONCAT(ZTuple, Z_INC(index)) *tuple, id value) {                                         \
-    tuple. Z_ORDINAL_AT(index) = value;                                                                                        \
+#define EZT_SETTER_FUNC_DEF(index)                                                                                               \
+static void EZ_CONCAT(setter, index)(EZ_CONCAT(EZTuple, EZ_INC(index)) *tuple, id value) {                                         \
+    tuple. EZ_ORDINAL_AT(index) = value;                                                                                        \
 }
 
-Z_FOR_SPACE(20, Z_SETTER_FUNC_DEF)
+EZ_FOR_SPACE(20, EZT_SETTER_FUNC_DEF)
 
-#define Z_GETTER_FUNC_DEF(index)                                                                                               \
-static id Z_CONCAT(getter, index)(Z_CONCAT(ZTuple, Z_INC(index)) *tuple) {                                                     \
-    return [tuple Z_ORDINAL_AT(index)];                                                                                        \
+#define EZT_GETTER_FUNC_DEF(index)                                                                                               \
+static id EZ_CONCAT(getter, index)(EZ_CONCAT(EZTuple, EZ_INC(index)) *tuple) {                                                     \
+    return [tuple EZ_ORDINAL_AT(index)];                                                                                        \
 }
 
-Z_FOR_SPACE(20, Z_GETTER_FUNC_DEF)
+EZ_FOR_SPACE(20, EZT_GETTER_FUNC_DEF)
 
-typedef void (*SetterType)(ZTupleBase *tuple, id value);
+typedef void (*SetterType)(EZTupleBase *tuple, id value);
 
-#define Z_SETTER_TABLE_ITEM(index)     & Z_CONCAT(setter, index)
+#define EZT_SETTER_TABLE_ITEM(index)     & EZ_CONCAT(setter, index)
 
 SetterType setterTable[] = {
-    Z_FOR_COMMA(20, Z_SETTER_TABLE_ITEM)
+    EZ_FOR_COMMA(20, EZT_SETTER_TABLE_ITEM)
 };
 
-typedef id (*GetterType)(ZTupleBase *tuple);
+typedef id (*GetterType)(EZTupleBase *tuple);
 
-#define Z_GETTER_TABLE_ITEM(index)     & Z_CONCAT(getter, index)
+#define EZT_GETTER_TABLE_ITEM(index)     & EZ_CONCAT(getter, index)
 
 GetterType getterTable[] = {
-    Z_FOR_COMMA(20, Z_GETTER_TABLE_ITEM)
+    EZ_FOR_COMMA(20, EZT_GETTER_TABLE_ITEM)
 };
 
-static unsigned short tupleCountWithObject(ZTupleBase *obj) {
+static unsigned short tupleCountWithObject(EZTupleBase *obj) {
     unsigned short count = 0;
-    sscanf(class_getName(object_getClass(obj)), "ZTuple%hu", &count);
+    sscanf(class_getName(object_getClass(obj)), "EZTuple%hu", &count);
     return count;
 }
 
-@implementation ZTupleBase
+@implementation EZTupleBase
 
 + (instancetype)tupleWithArray:(NSArray *)array {
-    ZTupleBase *tuple = [self tupleWithCount:array.count];
+    EZTupleBase *tuple = [self tupleWithCount:array.count];
     for (int i = 0; i < array.count; ++i) {
         tuple[i] = [array[i] isEqual:NSNull.null] ? nil : array[i];
     }
     return tuple;
 }
 
-+ (__kindof ZTupleBase *)tupleWithCount:(NSUInteger)count {
-    Class tupleClass = NSClassFromString([NSString stringWithFormat:@"ZTuple%lu", (unsigned long)count]);
-    ZTupleBase *tuple = [tupleClass new];
++ (__kindof EZTupleBase *)tupleWithCount:(NSUInteger)count {
+    Class tupleClass = NSClassFromString([NSString stringWithFormat:@"EZTuple%lu", (unsigned long)count]);
+    EZTupleBase *tuple = [tupleClass new];
     return tuple;
 }
 
@@ -107,8 +107,8 @@ static unsigned short tupleCountWithObject(ZTupleBase *obj) {
     return count;
 }
 
-- (BOOL)isEqual:(ZTupleBase *)other {
-    if (![other isKindOfClass:ZTupleBase.class]) {
+- (BOOL)isEqual:(EZTupleBase *)other {
+    if (![other isKindOfClass:EZTupleBase.class]) {
         return NO;
     }
     if (self == other) {
@@ -126,15 +126,15 @@ static unsigned short tupleCountWithObject(ZTupleBase *obj) {
     return YES;
 }
 
-- (__kindof ZTupleBase *)join:(ZTupleBase *)other { 
+- (__kindof EZTupleBase *)join:(EZTupleBase *)other { 
     NSUInteger selfCount = tupleCountWithObject(self);
     NSUInteger otherTupleCount = tupleCountWithObject(other);
     NSAssert(selfCount + otherTupleCount <= 20, @"two tuple items count added cannot larger than 20");
     if (selfCount + otherTupleCount > 20) {
         return nil;
     }
-    Class class = NSClassFromString([NSString stringWithFormat:@"ZTuple%@", @(selfCount + otherTupleCount)]);
-    ZTupleBase *newInstance = [class new];
+    Class class = NSClassFromString([NSString stringWithFormat:@"EZTuple%@", @(selfCount + otherTupleCount)]);
+    EZTupleBase *newInstance = [class new];
     for (int i = 0; i < selfCount; ++i) {
         newInstance[i] = self[i];
     }
@@ -144,7 +144,7 @@ static unsigned short tupleCountWithObject(ZTupleBase *obj) {
     return newInstance;
 }
 
-- (__kindof ZTupleBase *)take:(NSUInteger)count {
+- (__kindof EZTupleBase *)take:(NSUInteger)count {
     NSParameterAssert(count >= 1);
     if (count < 1) {
         return nil;
@@ -153,15 +153,15 @@ static unsigned short tupleCountWithObject(ZTupleBase *obj) {
         return [self copy];
     }
     
-    Class class = NSClassFromString([NSString stringWithFormat:@"ZTuple%@", @(count)]);
-    ZTupleBase *newInstance = [class new];
+    Class class = NSClassFromString([NSString stringWithFormat:@"EZTuple%@", @(count)]);
+    EZTupleBase *newInstance = [class new];
     for (int i = 0; i < count; ++i) {
         newInstance[i] = self[i];
     }
     return newInstance;
 }
 
-- (__kindof ZTupleBase *)drop:(NSUInteger)count {
+- (__kindof EZTupleBase *)drop:(NSUInteger)count {
     NSUInteger selfCount = tupleCountWithObject(self);
     NSParameterAssert(count < selfCount);
     if (count >= selfCount) {
@@ -171,8 +171,8 @@ static unsigned short tupleCountWithObject(ZTupleBase *obj) {
         return [self copy];
     }
     
-    Class class = NSClassFromString([NSString stringWithFormat:@"ZTuple%@", @(selfCount - count)]);
-    ZTupleBase *newInstance = [class new];
+    Class class = NSClassFromString([NSString stringWithFormat:@"EZTuple%@", @(selfCount - count)]);
+    EZTupleBase *newInstance = [class new];
     for (int i = 0; i + count < selfCount; ++i) {
         newInstance[i] = self[i + count];
     }

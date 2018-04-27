@@ -1,6 +1,0 @@
-framework module ZTuple {
-  umbrella header "ZTuple.h"
-
-  export *
-  module * { export * }
-}
