@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <ZTuple/ZMetaMacros.h>
+#import <EasyTuple/EZMetaMacros.h>
 
-Z_TUPLE_CLASSES_DEF
+EZ_TUPLE_CLASSES_DEF
 

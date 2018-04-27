@@ -17,7 +17,7 @@ SpecBegin(ZTupleTests)
 describe(@"tuple tests", ^{
     context(@"ordinal property", ^{
         it(@"can access tuple using properties", ^{
-            ZTuple3<NSNumber *, NSString *, NSDictionary *> *tuple = [[ZTuple3 alloc] initWithFirst:@3 second:@"string" third:@{@"key": @"value"}];
+            EZTuple3<NSNumber *, NSString *, NSDictionary *> *tuple = [[EZTuple3 alloc] initWithFirst:@3 second:@"string" third:@{@"key": @"value"}];
             
             expect(tuple.first).to.equal(@3);
             expect(tuple.second).to.equal(@"string");
@@ -32,7 +32,7 @@ describe(@"tuple tests", ^{
         });
         
         it(@"can create a new tuple using macro", ^{
-            ZTuple4<NSNumber *, NSNumber *, NSNumber *, NSNumber *> *tuple = ZTuple(@1, @2, @3, @4);
+            EZTuple4<NSNumber *, NSNumber *, NSNumber *, NSNumber *> *tuple = EZTuple(@1, @2, @3, @4);
             
             expect(tuple.first).to.equal(@1);
             expect(tuple.second).to.equal(@2);
@@ -42,9 +42,9 @@ describe(@"tuple tests", ^{
         });
         
         it(@"can unpack tuple using macro", ^{
-            ZTuple4<NSNumber *, NSNumber *, NSNumber *, NSNumber *> *tuple = ZTuple(@1, @2, @3, @4);
+            EZTuple4<NSNumber *, NSNumber *, NSNumber *, NSNumber *> *tuple = EZTuple(@1, @2, @3, @4);
             
-            ZTupleUnpack(NSNumber *a, NSNumber *b, NSNumber *c, NSNumber *d, Z_FromVar(tuple));
+            EZTupleUnpack(NSNumber *a, NSNumber *b, NSNumber *c, NSNumber *d, EZT_FromVar(tuple));
 
             expect(a).to.equal(@1);
             expect(b).to.equal(@2);
@@ -53,7 +53,7 @@ describe(@"tuple tests", ^{
         });
         
         it(@"can invoke KVO", ^{
-            ZTuple3 *tuple = ZTuple(@1, @2, @3);
+            EZTuple3 *tuple = EZTuple(@1, @2, @3);
             
             id observer = [OCMockObject mockForClass:NSObject.class];
             
@@ -77,7 +77,7 @@ describe(@"tuple tests", ^{
         });
         
         it(@"can observe property named last, will invoke observe callback when set the last ordinal oproperty", ^{
-            ZTuple3 *tuple = ZTuple(@1, @2, @3);
+            EZTuple3 *tuple = EZTuple(@1, @2, @3);
             
             id observer1 = [OCMockObject mockForClass:NSObject.class];
             id observer2 = [OCMockObject mockForClass:NSObject.class];
@@ -135,7 +135,7 @@ describe(@"tuple tests", ^{
 
     context(@"subscript", ^{
         it(@"can access subscript", ^{
-            ZTuple3 *tuple = ZTuple(@1, @2, @3);
+            EZTuple3 *tuple = EZTuple(@1, @2, @3);
             
             expect(tuple[0]).to.equal(@1);
             expect(tuple[1]).to.equal(@2);
@@ -147,7 +147,7 @@ describe(@"tuple tests", ^{
         });
         
         it(@"will raise an assert if access over subscript", ^{
-            ZTuple3 *tuple = ZTuple(@1, @2, @3);
+            EZTuple3 *tuple = EZTuple(@1, @2, @3);
             id assertHandler = [OCMockObject mockForClass:NSAssertionHandler.class];
             
             [[[assertHandler expect] ignoringNonObjectArgs] handleFailureInMethod:@selector(objectForKeyedSubscript:) object:tuple file:OCMOCK_ANY lineNumber:0 description:@"Invalid parameter not satisfying: %@", @"%@"];
@@ -171,7 +171,7 @@ describe(@"tuple tests", ^{
     
     context(@"fast enumeration", ^{
         it(@"can use for in to access tuple", ^{
-            ZTuple20 *tuple = ZTuple(@1, @2, @3, @4, @5, @6, @7, @8, @9, @10,
+            EZTuple20 *tuple = EZTuple(@1, @2, @3, @4, @5, @6, @7, @8, @9, @10,
                                      @11, @12, @13, @14, @15, @16, @17, @18, @19, @20);
             
             NSMutableArray *array = [NSMutableArray array];
@@ -184,7 +184,7 @@ describe(@"tuple tests", ^{
         });
         
         it(@"can use for(;;) to access tuple", ^{
-            ZTuple20 *tuple = ZTuple(@1, @2, @3, @4, @5, @6, @7, @8, @9, @10,
+            EZTuple20 *tuple = EZTuple(@1, @2, @3, @4, @5, @6, @7, @8, @9, @10,
                                      @11, @12, @13, @14, @15, @16, @17, @18, @19, @20);
             
             NSMutableArray *array = [NSMutableArray array];
@@ -198,7 +198,7 @@ describe(@"tuple tests", ^{
         });
         
         it(@"can access nil item use for-in", ^{
-            ZTuple4 *tuple = ZTuple(@1, @2, @3, nil);
+            EZTuple4 *tuple = EZTuple(@1, @2, @3, nil);
             
             NSMutableArray *array = [NSMutableArray array];
             BOOL hasNil = NO;
@@ -214,7 +214,7 @@ describe(@"tuple tests", ^{
         });
         
         it(@"will raise error if modify any item when enumeration", ^{
-            ZTuple3 *tuple = ZTuple(@1, @2, @3);
+            EZTuple3 *tuple = EZTuple(@1, @2, @3);
             
             objc_setEnumerationMutationHandler(enumerationMutationHandler);
             
@@ -239,8 +239,8 @@ describe(@"tuple tests", ^{
     
     context(@"copy", ^{
         it(@"can copy to get a cloned one", ^{
-            ZTuple3 *tuple = ZTuple(@1, @2, @3);
-            ZTuple3 *tupleCopied = [tuple copy];
+            EZTuple3 *tuple = EZTuple(@1, @2, @3);
+            EZTuple3 *tupleCopied = [tuple copy];
             
             expect(tupleCopied.first).to.equal(@1);
             expect(tupleCopied.second).to.equal(@2);
@@ -250,15 +250,15 @@ describe(@"tuple tests", ^{
     
     context(@"join", ^{
         it(@"can join two tuples use method join:", ^{
-            ZTuple2 *tuple1 = ZTuple(@1, @2);
-            ZTuple3 *tuple2 = ZTuple(@3, @4, @5);
+            EZTuple2 *tuple1 = EZTuple(@1, @2);
+            EZTuple3 *tuple2 = EZTuple(@3, @4, @5);
             
-            expect([tuple1 join:tuple2]).to.equal(ZTuple(@1, @2, @3, @4, @5));
+            expect([tuple1 join:tuple2]).to.equal(EZTuple(@1, @2, @3, @4, @5));
         });
         
         it(@"should raise an assert if two tuples itme count larger than 20", ^{
-            ZTuple11 *tuple1 = ZTuple(@1, @2, @3, @4, @5, @6, @7, @8, @9, @10, @11);
-            ZTuple11 *tuple2 = ZTuple(@1, @2, @3, @4, @5, @6, @7, @8, @9, @10, @11);
+            EZTuple11 *tuple1 = EZTuple(@1, @2, @3, @4, @5, @6, @7, @8, @9, @10, @11);
+            EZTuple11 *tuple2 = EZTuple(@1, @2, @3, @4, @5, @6, @7, @8, @9, @10, @11);
             id assertHandler = [OCMockObject mockForClass:NSAssertionHandler.class];
             
             [[[assertHandler expect] ignoringNonObjectArgs] handleFailureInMethod:@selector(join:) object:tuple1 file:OCMOCK_ANY lineNumber:0 description:@"two tuple items count added cannot larger than 20"];
@@ -266,7 +266,7 @@ describe(@"tuple tests", ^{
             [[[NSThread currentThread] threadDictionary] setValue:assertHandler
                                                            forKey:NSAssertionHandlerKey];
             
-            ZTupleBase *tuple3 = [tuple1 join:tuple2];
+            EZTupleBase *tuple3 = [tuple1 join:tuple2];
             expect(tuple3).to.beNil();
             [assertHandler verify];
             
@@ -274,30 +274,30 @@ describe(@"tuple tests", ^{
         });
         
         it(@"can use extend macro add some new item to exist tuple", ^{
-            ZTuple3 *tuple = ZTuple(@1, @2, @3);
-            ZTuple5 *tuple5 = ZTupleExtend(tuple, @4, @5);
+            EZTuple3 *tuple = EZTuple(@1, @2, @3);
+            EZTuple5 *tuple5 = EZTupleExtend(tuple, @4, @5);
             
-            expect(tuple5).to.equal(ZTuple(@1, @2, @3, @4, @5));
+            expect(tuple5).to.equal(EZTuple(@1, @2, @3, @4, @5));
         });
     });
     
     context(@"take & drop", ^{
         it(@"can take first N item from tuple", ^{
-            ZTuple4 *tuple = ZTuple(@1, @2, @3, @4);
-            ZTuple2 *tuple2 = [tuple take:2];
+            EZTuple4 *tuple = EZTuple(@1, @2, @3, @4);
+            EZTuple2 *tuple2 = [tuple take:2];
             
-            expect(tuple2).to.equal(ZTuple(@1, @2));
+            expect(tuple2).to.equal(EZTuple(@1, @2));
         });
         
         it(@"should get a clone if taken N is larger than tuple's count", ^{
-            ZTuple4 *tuple = ZTuple(@1, @2, @3, @4);
-            ZTuple4 *tuple2 = [tuple take:15];
+            EZTuple4 *tuple = EZTuple(@1, @2, @3, @4);
+            EZTuple4 *tuple2 = [tuple take:15];
             
             expect(tuple2).to.equal(tuple);
         });
         
         it(@"should raise an assert if N is 0", ^{
-            ZTuple11 *tuple = ZTuple(@1, @2, @3, @4, @5, @6, @7, @8, @9, @10, @11);
+            EZTuple11 *tuple = EZTuple(@1, @2, @3, @4, @5, @6, @7, @8, @9, @10, @11);
             id assertHandler = [OCMockObject mockForClass:NSAssertionHandler.class];
             
             [[[assertHandler expect] ignoringNonObjectArgs] handleFailureInMethod:@selector(join:) object:tuple file:OCMOCK_ANY lineNumber:0 description:@"Invalid parameter not satisfying: %@", @"count >= 1 && count <= tupleCountWithObject(self)"];
@@ -305,7 +305,7 @@ describe(@"tuple tests", ^{
             [[[NSThread currentThread] threadDictionary] setValue:assertHandler
                                                            forKey:NSAssertionHandlerKey];
             
-            ZTupleBase *tuple2 = [tuple take:0];
+            EZTupleBase *tuple2 = [tuple take:0];
             expect(tuple2).to.beNil();
             [assertHandler verify];
             
@@ -313,14 +313,14 @@ describe(@"tuple tests", ^{
         });
         
         it(@"can drop first N itme from tuple", ^{
-            ZTuple4 *tuple = ZTuple(@1, @2, @3, @4);
-            ZTuple2 *tuple2 = [tuple drop:2];
+            EZTuple4 *tuple = EZTuple(@1, @2, @3, @4);
+            EZTuple2 *tuple2 = [tuple drop:2];
             
-            expect(tuple2).to.equal(ZTuple(@3, @4));
+            expect(tuple2).to.equal(EZTuple(@3, @4));
         });
         
         it(@"should raise an assert if N is larger or equal than tuple's count", ^{
-            ZTuple11 *tuple = ZTuple(@1, @2, @3, @4, @5, @6, @7, @8, @9, @10, @11);
+            EZTuple11 *tuple = EZTuple(@1, @2, @3, @4, @5, @6, @7, @8, @9, @10, @11);
             id assertHandler = [OCMockObject mockForClass:NSAssertionHandler.class];
             
             [[[assertHandler expect] ignoringNonObjectArgs] handleFailureInMethod:@selector(join:) object:tuple file:OCMOCK_ANY lineNumber:0 description:@"Invalid parameter not satisfying: %@", @"count < selfCount"];
@@ -328,7 +328,7 @@ describe(@"tuple tests", ^{
             [[[NSThread currentThread] threadDictionary] setValue:assertHandler
                                                            forKey:NSAssertionHandlerKey];
             
-            ZTupleBase *tuple2 = [tuple drop:11];
+            EZTupleBase *tuple2 = [tuple drop:11];
             expect(tuple2).to.beNil();
             [assertHandler verify];
             
@@ -336,8 +336,8 @@ describe(@"tuple tests", ^{
         });
         
         it(@"should get a clone if drop N is zero", ^{
-            ZTuple4 *tuple = ZTuple(@1, @2, @3, @4);
-            ZTuple4 *tuple2 = [tuple drop:0];
+            EZTuple4 *tuple = EZTuple(@1, @2, @3, @4);
+            EZTuple4 *tuple2 = [tuple drop:0];
             
             expect(tuple2).to.equal(tuple);
         });
@@ -345,47 +345,47 @@ describe(@"tuple tests", ^{
     
     context(@"tuple and array convert", ^{
         it(@"can convert a tuple to an array", ^{
-            ZTuple3 *tuple = ZTuple(@1, @2, @3);
+            EZTuple3 *tuple = EZTuple(@1, @2, @3);
             
             expect([tuple allObjects]).to.equal(@[@1, @2, @3]);
         });
         
         it(@"should use NSNull instead nil when convert to an array", ^{
-            ZTuple3 *tuple = ZTuple(@1, nil, @3);
+            EZTuple3 *tuple = EZTuple(@1, nil, @3);
             
             expect([tuple allObjects]).to.equal(@[@1, NSNull.null, @3]);
         });
         
         it(@"can convert an array to a tuple", ^{
-            ZTupleBase *tuple = [ZTupleBase tupleWithArray:@[@1, @2, @3]];
+            EZTupleBase *tuple = [EZTupleBase tupleWithArray:@[@1, @2, @3]];
             
-            expect(tuple).to.equal(ZTuple(@1, @2, @3));
+            expect(tuple).to.equal(EZTuple(@1, @2, @3));
         });
         
         it(@"should use nil instead NSNull when convert to a tuple", ^{
-            ZTupleBase *tuple = [ZTupleBase tupleWithArray:@[@1, NSNull.null, @3]];
+            EZTupleBase *tuple = [EZTupleBase tupleWithArray:@[@1, NSNull.null, @3]];
             
-            expect(tuple).to.equal(ZTuple(@1, nil, @3));
+            expect(tuple).to.equal(EZTuple(@1, nil, @3));
         });
     });
     
     context(@"others", ^{
         it(@"will show description like NSArray", ^{
-            ZTuple2 *tuple = ZTuple(@1, @2);
+            EZTuple2 *tuple = EZTuple(@1, @2);
             
-            expect(tuple.description).to.equal([NSString stringWithFormat:@"<ZTuple2: 0x%lx>(\n    1,\n    2\n)", (unsigned long)tuple]);
+            expect(tuple.description).to.equal([NSString stringWithFormat:@"<EZTuple2: 0x%lx>(\n    1,\n    2\n)", (unsigned long)tuple]);
         });
         
         it(@"will show nil as null", ^{
-            ZTuple3 *tuple = ZTuple(@1, nil, @3);
+            EZTuple3 *tuple = EZTuple(@1, nil, @3);
             
-            expect(tuple.description).to.equal([NSString stringWithFormat:@"<ZTuple3: 0x%lx>(\n    1,\n    \"<null>\",\n    3\n)", (unsigned long)tuple]);
+            expect(tuple.description).to.equal([NSString stringWithFormat:@"<EZTuple3: 0x%lx>(\n    1,\n    \"<null>\",\n    3\n)", (unsigned long)tuple]);
         });
         
         it(@"will create a new tuple with count arg", ^{
-            ZTuple3 *tuple = [ZTupleBase tupleWithCount:3];
+            EZTuple3 *tuple = [EZTupleBase tupleWithCount:3];
             
-            expect(tuple).to.beKindOf([ZTuple3 class]);
+            expect(tuple).to.beKindOf([EZTuple3 class]);
         });
     });
 });

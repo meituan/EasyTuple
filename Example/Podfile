@@ -1,7 +1,7 @@
 use_frameworks!
 
 target 'ZTuple_iOS_Tests' do
-  pod 'ZTuple', :path => '../'
+  pod 'EasyTuple', :path => '../'
   
   pod 'Specta', '~> 1.0'
   pod 'Expecta', '~> 1.0'
@@ -9,7 +9,7 @@ target 'ZTuple_iOS_Tests' do
 end
 
 target 'ZTuple_macOS_Tests' do
-    pod 'ZTuple', :path => '../'
+    pod 'EasyTuple', :path => '../'
     
     pod 'Specta', '~> 1.0'
     pod 'Expecta', '~> 1.0'

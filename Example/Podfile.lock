@@ -1,25 +1,31 @@
 PODS:
+  - EasyTuple (1.0.0)
   - Expecta (1.0.6)
-  - OCMock (3.4)
-  - Specta (1.0.6)
-  - ZTuple (1.0.1.alpha)
+  - OCMock (3.4.1)
+  - Specta (1.0.7)
 
 DEPENDENCIES:
+  - EasyTuple (from `../`)
   - Expecta (~> 1.0)
   - OCMock (~> 3.4)
   - Specta (~> 1.0)
-  - ZTuple (from `../`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Expecta
+    - OCMock
+    - Specta
 
 EXTERNAL SOURCES:
-  ZTuple:
+  EasyTuple:
     :path: "../"
 
 SPEC CHECKSUMS:
+  EasyTuple: 786a90181e0ef4f3e4d44d6068adbed76a301b91
   Expecta: 3b6bd90a64b9a1dcb0b70aa0e10a7f8f631667d5
-  OCMock: 35ae71d6a8fcc1b59434d561d1520b9dd4f15765
-  Specta: f506f3a8361de16bc0dcf3b17b75e269072ba465
-  ZTuple: 8db252fa2f4402f7371963d683b4c04d4db14016
+  OCMock: 2cd0716969bab32a2283ff3a46fd26a8c8b4c5e3
+  Specta: 3e1bd89c3517421982dc4d1c992503e48bd5fe66
 
-PODFILE CHECKSUM: b7e6f61d8fa03492380586d2c59b0c4a52eeedfc
+PODFILE CHECKSUM: cd57d8c2396d0e2a07f93cb52541ea6887ca92d4
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.5.0

@@ -1,10 +1,10 @@
 Pod::Spec.new do |s|
-  s.name             = 'ZTuple'
-  s.version          = '1.2.0'
-  s.summary          = 'ZTuple.'
+  s.name             = 'EasyTuple'
+  s.version          = '1.0.0'
+  s.summary          = 'EasyTuple.'
 
   s.description      = <<-DESC
-Sometimes you may need to return multiple values other than just one. In these cases, you can use a pointer, like `NSError **`, or you can put them into an array or a dictionary, or straightforward, create a class for it. But you have another choice now, ZTuple, it can group multiple values in a better way. 
+Sometimes you may need to return multiple values other than just one. In these cases, you can use a pointer, like `NSError **`, or you can put them into an array or a dictionary, or straightforward, create a class for it. But you have another choice now, EasyTuple, it can group multiple values in a better way. 
                        DESC
 
   s.homepage         = 'https://github.com/WilliamZang/ZTuple'
@@ -17,11 +17,11 @@ Sometimes you may need to return multiple values other than just one. In these c
   s.watchos.deployment_target = '2.0'
   s.tvos.deployment_target = '9.0'
 
-  s.source_files = 'ZTuple/**/*.{m,h}'
+  s.source_files = 'EasyTuple/**/*.{m,h}'
 
-  s.public_header_files = 'ZTuple/**/*.h'
+  s.public_header_files = 'EasyTuple/**/*.h'
   
-  s.module_map = 'ZTuple/ZTuple.modulemap'
+  s.module_map = 'EasyTuple/EasyTuple.modulemap'
   
   s.frameworks = 'Foundation'
 end
