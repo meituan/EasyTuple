@@ -1,6 +1,6 @@
 # EasyTuple
 
-[![CI Status](http://img.shields.io/travis/WilliamZang/EasyTuple.svg?style=flat)](https://travis-ci.org/WilliamZang/EasyTuple)
+[![CI Status](https://travis-ci.org/EasyReactFramework/EasyTuple.svg?style=flat)](https://travis-ci.org/EasyReactFramework/EasyTuple)
 [![Version](https://img.shields.io/cocoapods/v/EasyTuple.svg?style=flat)](http://cocoapods.org/pods/EasyTuple)
 [![License](https://img.shields.io/cocoapods/l/EasyTuple.svg?style=flat)](http://cocoapods.org/pods/EasyTuple)
 [![Platform](https://img.shields.io/cocoapods/p/EasyTuple.svg?style=flat)](http://cocoapods.org/pods/EasyTuple)
