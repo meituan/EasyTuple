@@ -63,7 +63,8 @@
 
 #define EZ_DEC(VAL)                                          EZ_ARG_AT(VAL, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19)
 #define EZ_INC(VAL)                                          EZ_ARG_AT(VAL, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21)
-#define EZ_ARG_COUNT(...)                                    EZ_ARG_AT(20, ##__VA_ARGS__, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0)
+#define EZ_ARG_COUNT(...)   _EZ_ARG_COUNT(__VA_ARGS__)
+#define _EZ_ARG_COUNT(...)                                    EZ_ARG_AT(20, ##__VA_ARGS__, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0)
 
 #define EZ_TAKE(N, ...)                                      EZ_CONCAT(EZ_TAKE, N)(__VA_ARGS__)
 #define EZ_TAKE0(...)
@@ -206,7 +207,8 @@
 #define EZ_FOR_COMMA19(MARCO)                                EZ_FOR_COMMA18(MARCO), MARCO(18)
 #define EZ_FOR_COMMA20(MARCO)                                EZ_FOR_COMMA19(MARCO), MARCO(19)
 
-#define EZ_FOR_EACH(MACRO, SEP, ...)                         EZ_FOR_EACH_CTX(EZ_FOR_EACH_ITER_, SEP, MACRO, ##__VA_ARGS__)
+#define EZ_FOR_EACH(...)                                     _EZ_FOR_EACH(__VA_ARGS__)
+#define _EZ_FOR_EACH(MACRO, SEP, ...)                        EZ_FOR_EACH_CTX(EZ_FOR_EACH_ITER_, SEP, MACRO, ##__VA_ARGS__)
 #define EZ_FOR_EACH_ITER_(INDEX, PARAM, MACRO)               MACRO(INDEX, PARAM)
 
 #define EZ_FOR_EACH_CTX(MACRO, SEP, CTX, ...)                EZ_CONCAT(EZ_FOR_EACH_CTX, EZ_ARG_COUNT(__VA_ARGS__))(MACRO, SEP, CTX, ##__VA_ARGS__)
@@ -331,7 +333,9 @@ EZ_FOR_RECURSIVE(i, EZ_PROPERTY_DEF, ;);                                        
 #define _EZ_INIT_PARAM_CALL(index, param)                    EZ_ORDINAL_AT(index):param
 #define EZ_INIT_PARAM_CALL(index, param)                     EZ_IF_EQ(0, index)(_EZ_INIT_PARAM_CALL_FIRST(index, param))(_EZ_INIT_PARAM_CALL(index, param))
 
-#define EZTuple(...)                                         [[EZ_CONCAT(EZTuple, EZ_ARG_COUNT(__VA_ARGS__)) alloc] EZ_CONCAT(initWith, EZ_FOR_EACH(EZ_INIT_PARAM_CALL, ,__VA_ARGS__))]
+#define EZTupleAs(_Class_, ...)                              [[_Class_ alloc] EZ_CONCAT(initWith, EZ_FOR_EACH(EZ_INIT_PARAM_CALL, ,__VA_ARGS__))]
+
+#define EZTuple(...)                                         EZTupleAs(EZ_CONCAT(EZTuple, EZ_ARG_COUNT(__VA_ARGS__)), __VA_ARGS__)
 
 #define EZT_FromVar(tuple)                                    (tuple)
 
@@ -341,3 +345,12 @@ EZ_FOR_RECURSIVE(i, EZ_PROPERTY_DEF, ;);                                        
 #define EZ_FOR_EACH_CTX_(...)                                EZ_FOR_EACH_CTX(__VA_ARGS__)
 
 #define EZTupleExtend(tuple, ...)                            [tuple join:EZTuple(__VA_ARGS__)]
+
+#define EZT_PrivateSetterDef(_index_)  \
+- (void)EZ_CONCAT(_set, EZ_ORDINAL_CAP_AT(_index_)):(id)value excludeNotifiyKey:(NSString *)key
+
+@interface EZTupleBase (Private)
+
+EZ_FOR(20, EZT_PrivateSetterDef, ;);
+
+@end

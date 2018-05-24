@@ -5,13 +5,13 @@ target 'ZTuple_iOS_Tests' do
   
   pod 'Specta', '~> 1.0'
   pod 'Expecta', '~> 1.0'
-  pod 'OCMock', '~> 3.4'
+  pod 'OCMockito', '~> 5.0'
 end
 
 target 'ZTuple_macOS_Tests' do
-    pod 'EasyTuple', :path => '../'
+  pod 'EasyTuple', :path => '../'
     
-    pod 'Specta', '~> 1.0'
-    pod 'Expecta', '~> 1.0'
-    pod 'OCMock', '~> 3.4'
+  pod 'Specta', '~> 1.0'
+  pod 'Expecta', '~> 1.0'
+  pod 'OCMockito', '~> 5.0'
 end
