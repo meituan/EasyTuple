@@ -414,7 +414,7 @@ describe(@"tuple tests", ^{
     });
     
     context(@"others", ^{
-        it(@"will show description like NSArray", ^{
+        it(@"will show description like NSDictionary", ^{
             EZTuple2 *tuple = EZTuple(@1, @2);
             
             expect(tuple.description).to.equal([NSString stringWithFormat:@"<EZTuple2: %p>(\n\tfirst = 1;\n\tsecond = 2;\n\tlast = 2;\n)", tuple]);
