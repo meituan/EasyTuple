@@ -478,7 +478,7 @@ describe(@"named tuple tests", ^{
         });
         
         context(@"others", ^{
-            it(@"will show description like NSArray", ^{
+            it(@"will show description like NSDictionary", ^{
                 TestNamedTuple *namedTuple = TestNamedTupleMake(@"str", @1, @{@"a": @"b"});
                 
                 expect(namedTuple.description).to.equal([NSString stringWithFormat:@"<TestNamedTuple: %p>(\n\tstring = str;\n\tnumber = 1;\n\tdictionary = {\n    a = b;\n};\n)", namedTuple]);
