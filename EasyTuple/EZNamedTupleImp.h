@@ -44,7 +44,7 @@ FOUNDATION_EXPORT _ClassName_ * EZ_CONCAT(make, _ClassName_)(EZT_NamedPropertyPa
 } \
 \
 - (void)EZ_CONCAT(set_, _propertyName_):(id)value { \
-    [self performSelector:NSSelectorFromString(@"_set" EZ_STRINGIFY(EZ_ORDINAL_CAP_AT(_index_)) ":excludeNotifiyKey:") withObject:value withObject:@EZ_STRINGIFY(_propertyName_)]; \
+    [self EZ_CONCAT(_set, EZ_ORDINAL_CAP_AT(_index_)):value excludeNotifiyKey:@EZ_STRINGIFY(_propertyName_)]; \
 }
 
 #define EZT_descriptionProperty(_, _propertyName_) \
@@ -66,4 +66,3 @@ EZ_FOR_EACH(EZT_GetterAndSetter, ;, EZT_NamedPropertyNameList(EZT_TableName(_Cla
 _ClassName_ * EZ_CONCAT(make, _ClassName_)(EZT_NamedPropertyParamsList(EZT_TableName(_ClassName_))) { \
     return EZTupleAs(_ClassName_, EZT_NamedPropertyNameList(EZT_TableName(_ClassName_))); \
 }
-

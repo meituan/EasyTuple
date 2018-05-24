@@ -34,7 +34,7 @@ EZ_CONCAT(_, EZ_ORDINAL_AT(index)) = EZ_ORDINAL_AT(index); \
 self.hashValue ^= (NSUInteger)EZ_ORDINAL_AT(index)
 
 #define EZT_SETTER(index) \
-- (void)EZ_CONCAT(_set, EZ_ORDINAL_CAP_AT(index)):(id)value excludeNotifiyKey:(NSString *)key { \
+EZT_PrivateSetterDef(index) { \
     NSString *propertyName = propertyNameForIndex(self, index); \
     if (![propertyName isEqual:@EZ_STRINGIFY(EZ_ORDINAL_AT(index))]) { \
         [self willChangeValueForKey:propertyName]; \
@@ -78,7 +78,7 @@ EZ_FOR_RECURSIVE(i, EZT_SYNTHESIZE, ;); \
 \
 EZ_FOR_RECURSIVE(EZ_DEC(i), EZT_SETTER, ;) \
 \
-- (void)EZ_CONCAT(_set, EZ_ORDINAL_CAP_AT(EZ_DEC(i))):(id)value excludeNotifiyKey:(NSString *)key { \
+EZT_PrivateSetterDef(EZ_DEC(i)) { \
     NSString *propertyName = propertyNameForIndex(self, EZ_DEC(i)); \
     if (![propertyName isEqual:@EZ_STRINGIFY(EZ_ORDINAL_AT(EZ_DEC(i)))]) { \
         [self willChangeValueForKey:propertyName]; \

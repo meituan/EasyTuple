@@ -9,4 +9,3 @@
 #import <EasyTuple/EZMetaMacros.h>
 
 EZ_TUPLE_CLASSES_DEF
-

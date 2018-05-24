@@ -345,3 +345,12 @@ EZ_FOR_RECURSIVE(i, EZ_PROPERTY_DEF, ;);                                        
 #define EZ_FOR_EACH_CTX_(...)                                EZ_FOR_EACH_CTX(__VA_ARGS__)
 
 #define EZTupleExtend(tuple, ...)                            [tuple join:EZTuple(__VA_ARGS__)]
+
+#define EZT_PrivateSetterDef(_index_)  \
+- (void)EZ_CONCAT(_set, EZ_ORDINAL_CAP_AT(_index_)):(id)value excludeNotifiyKey:(NSString *)key
+
+@interface EZTupleBase (Private)
+
+EZ_FOR(20, EZT_PrivateSetterDef, ;);
+
+@end
