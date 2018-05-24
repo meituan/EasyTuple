@@ -1,6 +1,6 @@
 # EasyTuple
 
-[![CI Status](https://travis-ci.org/EasyReactFramework/EasyTuple.svg?style=flat)](https://travis-ci.org/EasyReactFramework/EasyTuple)
+[![Build Status](https://travis-ci.org/EasyReactFramework/EasyTuple.svg?branch=master)](https://travis-ci.org/EasyReactFramework/EasyTuple)
 [![Version](https://img.shields.io/cocoapods/v/EasyTuple.svg?style=flat)](http://cocoapods.org/pods/EasyTuple)
 [![License](https://img.shields.io/cocoapods/l/EasyTuple.svg?style=flat)](http://cocoapods.org/pods/EasyTuple)
 [![Platform](https://img.shields.io/cocoapods/p/EasyTuple.svg?style=flat)](http://cocoapods.org/pods/EasyTuple)
@@ -56,6 +56,60 @@ All the elements inside the tuple are Key-Value Observable. If you observe `seco
 
 EZTuple supports `NSCopying` protocol. You can easily copy them if you need.
 
+## Named tuples
+
+The tuple classes from `EZTuple1` to `EZTuple20` only have properties `first`, `second`, etc. You may need to give the properties custom names. Named tuple can help you. 
+
+Each named tuple is a class. So you may declare it like this:
+
+```objective-c
+// File TestNamedTuple.h or the other header
+
+@import EasyTuple;
+
+// Define a macro table with your tuple name concating 'Table'
+#define TestNamedTupleTable(_) \
+_(NSString *, string) \
+_(NSNumber *, number) \
+_(NSDictionary *, dictionary)
+
+// Declare your class which is your tuple name
+EZTNamedTupleDef(TestNamedTuple)
+```
+
+You should implement the class because it is a real class. You may implement it like this:
+
+```objective-c
+// File TestNamedTuple.m or the other .m file
+#import "TestNamedTuple.h"
+
+// Implement your class
+EZTNamedTupleImp(TestNamedTuple)
+```
+
+Now you can use your named tuple like a normal class:
+
+```objective-c
+
+- (void)anyMethod {
+    TestNamedTuple *tuple = TestNamedTupleMake(@"str", @15, @{@"key": @"value"});
+    tuple.string = @"new";
+    NSLog(@"property number is %@", tuple.number);
+}
+
+```
+
+There is generic inside the property type? Don't worry, it can support like this:
+
+```objective-c
+#define TestNamedTupleWithGenericTable(_) \
+_(NSArray<T> *, arr) \
+_(NSDictionary<K, V> *, dic);
+
+EZTNamedTupleDef(TestNamedTupleWithGeneric, T, K, V)
+
+```
+
 ## Features
 
 * EZTuple macro create a tuple quickly
@@ -66,6 +120,7 @@ EZTuple supports `NSCopying` protocol. You can easily copy them if you need.
 * drop some item or take some item
 * join two tuples
 * convert a tuple to an array or convert an array to a tuple
+* declare named tuple
 
 ## Advantages
 Compare to NSArray / NSDictionary, EZTuple has the following advantages:

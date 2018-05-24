@@ -6,12 +6,12 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 - named tuple
-- XXXNamedTupleMake can create a named tuple
+- you can create a named tuple with XXXNamedTupleMake
 - named tuple have all tuple features
 
 ### Changed
 
-- description like dictionary
+- dictionary-like description
 
 ## [1.0.0] - 2017-09-27
 
@@ -22,10 +22,10 @@ All notable changes to this project will be documented in this file.
 - using subscripts to access items
 - using for-in to access itmes
 - support NSCopy protocol
-- you can get count using '- (NSUInteger)count'
+- get count using '- (NSUInteger)count'
 - take some items and drop some items to get a new tuple
-- extend item
+- extend an item
 - join two tuples
-- convert a tuple to an array or convert an array to a tuple
+- convert a tuple to an array or vice versa an array to a tuple
 - support tvOS and watchOS
-- you can create a new tuple with +[ZTupleBase tupleWithCount:]
+- create a new tuple with +[ZTupleBase tupleWithCount:]
