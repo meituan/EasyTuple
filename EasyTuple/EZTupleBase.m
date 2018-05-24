@@ -41,12 +41,6 @@ GetterType getterTable[] = {
     EZ_FOR_COMMA(20, EZT_GETTER_TABLE_ITEM)
 };
 
-static unsigned short tupleCountWithObject(EZTupleBase *obj) {
-    unsigned short count = 0;
-    sscanf(class_getName(object_getClass(obj)), "EZTuple%hu", &count);
-    return count;
-}
-
 @implementation EZTupleBase
 
 + (instancetype)tupleWithArray:(NSArray *)array {
@@ -68,12 +62,12 @@ static unsigned short tupleCountWithObject(EZTupleBase *obj) {
 }
 
 - (NSUInteger)count {
-    return tupleCountWithObject(self);
+    return 0;
 }
 
 - (id)objectAtIndexedSubscript:(NSUInteger)idx {
-    NSParameterAssert(idx < tupleCountWithObject(self));
-    if (idx < tupleCountWithObject(self)) {
+    NSParameterAssert(idx < self.count);
+    if (idx < self.count) {
         return getterTable[idx](self);
     } else {
         return nil;
@@ -81,19 +75,22 @@ static unsigned short tupleCountWithObject(EZTupleBase *obj) {
 }
 
 - (void)setObject:(id)obj atIndexedSubscript:(NSUInteger)idx {
-    NSParameterAssert(idx < tupleCountWithObject(self));
-    if (idx < tupleCountWithObject(self)) {
+    NSParameterAssert(idx < self.count);
+    if (idx < self.count) {
         setterTable[idx](self, obj);
     }
 }
 
 - (nonnull id)copyWithZone:(nullable NSZone *)zone {
-    NSAssert(false, @"Should implement within subclass");
-    return nil;
+    EZTupleBase *copied = [[self class] new];
+    for (int i = 0; i < self.count; ++i) {
+        copied[i] = self[i];
+    }
+    return copied;
 }
 
 - (NSUInteger)countByEnumeratingWithState:(nonnull NSFastEnumerationState *)state objects:(id  _Nullable __unsafe_unretained * _Nonnull)buffer count:(NSUInteger)len {
-    NSUInteger count = tupleCountWithObject(self);
+    NSUInteger count = self.count;
     if (state->state == count) {
         return 0;
     }
@@ -114,10 +111,10 @@ static unsigned short tupleCountWithObject(EZTupleBase *obj) {
     if (self == other) {
         return YES;
     }
-    if (self.class != other.class) {
+    if (self.count != other.count) {
         return NO;
     }
-    for (int i = 0; i < tupleCountWithObject(self); ++i) {
+    for (int i = 0; i < self.count; ++i) {
         if (self[i] == other[i] || [self[i] isEqual:other[i]]) {
             continue;
         }
@@ -127,8 +124,8 @@ static unsigned short tupleCountWithObject(EZTupleBase *obj) {
 }
 
 - (__kindof EZTupleBase *)join:(EZTupleBase *)other { 
-    NSUInteger selfCount = tupleCountWithObject(self);
-    NSUInteger otherTupleCount = tupleCountWithObject(other);
+    NSUInteger selfCount = self.count;
+    NSUInteger otherTupleCount = other.count;
     NSAssert(selfCount + otherTupleCount <= 20, @"two tuple items count added cannot larger than 20");
     if (selfCount + otherTupleCount > 20) {
         return nil;
@@ -149,7 +146,7 @@ static unsigned short tupleCountWithObject(EZTupleBase *obj) {
     if (count < 1) {
         return nil;
     }
-    if (count >= tupleCountWithObject(self)) {
+    if (count >= self.count) {
         return [self copy];
     }
     
@@ -162,7 +159,7 @@ static unsigned short tupleCountWithObject(EZTupleBase *obj) {
 }
 
 - (__kindof EZTupleBase *)drop:(NSUInteger)count {
-    NSUInteger selfCount = tupleCountWithObject(self);
+    NSUInteger selfCount = self.count;
     NSParameterAssert(count < selfCount);
     if (count >= selfCount) {
         return nil;
@@ -185,10 +182,6 @@ static unsigned short tupleCountWithObject(EZTupleBase *obj) {
         [array addObject:item ?: NSNull.null];
     }
     return [array copy];
-}
-
-- (NSString *)description {
-    return [NSString stringWithFormat:@"%@%@", [super description], [self allObjects]];
 }
 
 @end

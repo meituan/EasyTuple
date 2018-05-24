@@ -1,19 +1,22 @@
 PODS:
   - EasyTuple (1.0.0)
   - Expecta (1.0.6)
-  - OCMock (3.4.1)
+  - OCHamcrest (7.1.0)
+  - OCMockito (5.1.0):
+    - OCHamcrest (~> 7.0)
   - Specta (1.0.7)
 
 DEPENDENCIES:
   - EasyTuple (from `../`)
   - Expecta (~> 1.0)
-  - OCMock (~> 3.4)
+  - OCMockito (~> 5.0)
   - Specta (~> 1.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Expecta
-    - OCMock
+    - OCHamcrest
+    - OCMockito
     - Specta
 
 EXTERNAL SOURCES:
@@ -21,11 +24,12 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  EasyTuple: 786a90181e0ef4f3e4d44d6068adbed76a301b91
+  EasyTuple: deb26a6a6153e5a0bd9fc707c5b51d4d1a582824
   Expecta: 3b6bd90a64b9a1dcb0b70aa0e10a7f8f631667d5
-  OCMock: 2cd0716969bab32a2283ff3a46fd26a8c8b4c5e3
+  OCHamcrest: f91040b9a78196a9e26bc831265dda5ab6839590
+  OCMockito: f420d00dc5ffbb7452f9f499cd1766e6583d61a5
   Specta: 3e1bd89c3517421982dc4d1c992503e48bd5fe66
 
-PODFILE CHECKSUM: cd57d8c2396d0e2a07f93cb52541ea6887ca92d4
+PODFILE CHECKSUM: 3cc1d5dfce9fdc5bcc98f0f486c69973bcdd4b6f
 
 COCOAPODS: 1.5.0

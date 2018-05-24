@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2249BD281F3713A400E918A0 /* ZTupleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* ZTupleTests.m */; };
+		2231DAF220AAF86A000F1054 /* TestNamedTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = 2231DAF120AAF86A000F1054 /* TestNamedTuple.m */; };
+		2231DAF320AAF870000F1054 /* TestNamedTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = 2231DAF120AAF86A000F1054 /* TestNamedTuple.m */; };
+		2249BD281F3713A400E918A0 /* EZTupleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* EZTupleTests.m */; };
 		2249BD2C1F3714A500E918A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2249BD2B1F3714A500E918A0 /* Foundation.framework */; };
 		2249BD2E1F3714B900E918A0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2249BD2D1F3714B900E918A0 /* XCTest.framework */; };
+		224B0BE420B559F8003A02FC /* ZNamedTupleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E47F8D20AD54CF002841AF /* ZNamedTupleTests.m */; };
+		224B0BE520B559F8003A02FC /* ZNamedTupleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E47F8D20AD54CF002841AF /* ZNamedTupleTests.m */; };
 		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
-		6003F5BC195388D20070C39A /* ZTupleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* ZTupleTests.m */; };
+		6003F5BC195388D20070C39A /* EZTupleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* EZTupleTests.m */; };
 		610D965BC055BD8A2908B6BC /* Pods_ZTuple_macOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A0EAD10863E3F8D00C9C113 /* Pods_ZTuple_macOS_Tests.framework */; };
 		F6154C4BD95C0D82A8FA896A /* Pods_ZTuple_iOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A8A8A95565FB1512C7E590 /* Pods_ZTuple_iOS_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -21,19 +25,22 @@
 /* Begin PBXFileReference section */
 		0C9A399F4BF5DA6BB9917B68 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		222734831F376EBF00B08478 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
+		2231DAF020AAF86A000F1054 /* TestNamedTuple.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestNamedTuple.h; sourceTree = "<group>"; };
+		2231DAF120AAF86A000F1054 /* TestNamedTuple.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestNamedTuple.m; sourceTree = "<group>"; };
 		2249BD201F37136600E918A0 /* ZTuple_macOS_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZTuple_macOS_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2249BD2B1F3714A500E918A0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		2249BD2D1F3714B900E918A0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		2249BD2F1F372E1C00E918A0 /* MacTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MacTests-Info.plist"; sourceTree = "<group>"; };
 		2249BD301F372E1C00E918A0 /* iOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOSTests-Info.plist"; sourceTree = "<group>"; };
 		229641851F5004B000D23822 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
+		22E47F8D20AD54CF002841AF /* ZNamedTupleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZNamedTupleTests.m; sourceTree = "<group>"; };
 		5A0EAD10863E3F8D00C9C113 /* Pods_ZTuple_macOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZTuple_macOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6003F5AE195388D20070C39A /* ZTuple_iOS_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZTuple_iOS_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		6003F5BB195388D20070C39A /* ZTupleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTupleTests.m; sourceTree = "<group>"; };
+		6003F5BB195388D20070C39A /* EZTupleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EZTupleTests.m; sourceTree = "<group>"; };
 		64A8A8A95565FB1512C7E590 /* Pods_ZTuple_iOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZTuple_iOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D6B1F845E0C4896AF40F9ED /* Pods-ZTuple_iOS_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZTuple_iOS_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZTuple_iOS_Tests/Pods-ZTuple_iOS_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A76F26F2E35C083B94F52087 /* Pods-ZTuple_iOS_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZTuple_iOS_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZTuple_iOS_Tests/Pods-ZTuple_iOS_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -68,6 +75,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2231DAEF20AAF850000F1054 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				2231DAF020AAF86A000F1054 /* TestNamedTuple.h */,
+				2231DAF120AAF86A000F1054 /* TestNamedTuple.m */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
@@ -107,7 +123,9 @@
 		6003F5B5195388D20070C39A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				6003F5BB195388D20070C39A /* ZTupleTests.m */,
+				2231DAEF20AAF850000F1054 /* Libs */,
+				6003F5BB195388D20070C39A /* EZTupleTests.m */,
+				22E47F8D20AD54CF002841AF /* ZNamedTupleTests.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -197,7 +215,7 @@
 				TargetAttributes = {
 					2249BD1F1F37136600E918A0 = {
 						CreatedOnToolsVersion = 9.0;
-						DevelopmentTeam = Q5BGL2788X;
+						DevelopmentTeam = 97MVDYKCHQ;
 						ProvisioningStyle = Automatic;
 					};
 					6003F5AD195388D20070C39A = {
@@ -269,14 +287,16 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ZTuple_macOS_Tests/Pods-ZTuple_macOS_Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/EasyTuple-macOS/EasyTuple.framework",
 				"${BUILT_PRODUCTS_DIR}/Expecta-macOS/Expecta.framework",
-				"${BUILT_PRODUCTS_DIR}/OCMock-macOS/OCMock.framework",
+				"${BUILT_PRODUCTS_DIR}/OCHamcrest-macOS/OCHamcrest.framework",
+				"${BUILT_PRODUCTS_DIR}/OCMockito-macOS/OCMockito.framework",
 				"${BUILT_PRODUCTS_DIR}/Specta-macOS/Specta.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EasyTuple.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Expecta.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OCMock.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OCHamcrest.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OCMockito.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Specta.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,14 +313,16 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ZTuple_iOS_Tests/Pods-ZTuple_iOS_Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/EasyTuple-iOS/EasyTuple.framework",
 				"${BUILT_PRODUCTS_DIR}/Expecta-iOS/Expecta.framework",
-				"${BUILT_PRODUCTS_DIR}/OCMock-iOS/OCMock.framework",
+				"${BUILT_PRODUCTS_DIR}/OCHamcrest-iOS/OCHamcrest.framework",
+				"${BUILT_PRODUCTS_DIR}/OCMockito-iOS/OCMockito.framework",
 				"${BUILT_PRODUCTS_DIR}/Specta-iOS/Specta.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EasyTuple.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Expecta.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OCMock.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OCHamcrest.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OCMockito.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Specta.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,7 +355,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2249BD281F3713A400E918A0 /* ZTupleTests.m in Sources */,
+				2231DAF320AAF870000F1054 /* TestNamedTuple.m in Sources */,
+				224B0BE520B559F8003A02FC /* ZNamedTupleTests.m in Sources */,
+				2249BD281F3713A400E918A0 /* EZTupleTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,7 +365,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6003F5BC195388D20070C39A /* ZTupleTests.m in Sources */,
+				2231DAF220AAF86A000F1054 /* TestNamedTuple.m in Sources */,
+				224B0BE420B559F8003A02FC /* ZNamedTupleTests.m in Sources */,
+				6003F5BC195388D20070C39A /* EZTupleTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,7 +396,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = Q5BGL2788X;
+				DEVELOPMENT_TEAM = 97MVDYKCHQ;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -410,7 +436,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = Q5BGL2788X;
+				DEVELOPMENT_TEAM = 97MVDYKCHQ;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
