@@ -36,7 +36,7 @@ __attribute__((objc_subclassing_restricted)) \
 EZT_TableName(_ClassName_)(EZT_NamedPropertyDefine) \
 @end \
 \
-FOUNDATION_EXPORT _ClassName_ * EZ_CONCAT(make, _ClassName_)(EZT_NamedPropertyParamsList(EZT_TableName(_ClassName_)));
+FOUNDATION_EXPORT _ClassName_ * EZ_CONCAT(_ClassName_, Make)(EZT_NamedPropertyParamsList(EZT_TableName(_ClassName_)));
 
 #define EZT_GetterAndSetter(_index_, _propertyName_) \
 - (id)_propertyName_ { \
@@ -63,6 +63,6 @@ EZ_FOR_EACH(EZT_GetterAndSetter, ;, EZT_NamedPropertyNameList(EZT_TableName(_Cla
     return description; \
 } \
 @end \
-_ClassName_ * EZ_CONCAT(make, _ClassName_)(EZT_NamedPropertyParamsList(EZT_TableName(_ClassName_))) { \
+_ClassName_ * EZ_CONCAT(_ClassName_, Make)(EZT_NamedPropertyParamsList(EZT_TableName(_ClassName_))) { \
     return EZTupleAs(_ClassName_, EZT_NamedPropertyNameList(EZT_TableName(_ClassName_))); \
 }

@@ -42,7 +42,7 @@ describe(@"named tuple tests", ^{
             });
             
             it(@"can create a new tuple using macro", ^{
-                TestNamedTuple *namedTuple = makeTestNamedTuple(@"str", @1, @{@"a": @"b"});
+                TestNamedTuple *namedTuple = TestNamedTupleMake(@"str", @1, @{@"a": @"b"});
                 
                 expect(namedTuple.string).to.equal(@"str");
                 expect(namedTuple.number).to.equal(@1);
@@ -50,7 +50,7 @@ describe(@"named tuple tests", ^{
             });
             
             it(@"can unpack tuple using macro", ^{
-                TestNamedTuple *namedTuple = makeTestNamedTuple(@"str", @1, @{@"a": @"b"});
+                TestNamedTuple *namedTuple = TestNamedTupleMake(@"str", @1, @{@"a": @"b"});
                 
                 EZTupleUnpack(NSString *a, NSNumber *b, NSDictionary *c, EZT_FromVar(namedTuple));
                 
@@ -60,7 +60,7 @@ describe(@"named tuple tests", ^{
             });
             
             it(@"can invoke KVO", ^{
-                TestNamedTuple *namedTuple = makeTestNamedTuple(@"str", @1, @{@"a": @"b"});
+                TestNamedTuple *namedTuple = TestNamedTupleMake(@"str", @1, @{@"a": @"b"});
                 
                 id observer = mock(NSObject.class);
                 
@@ -81,7 +81,7 @@ describe(@"named tuple tests", ^{
             });
             
             it(@"can observe named property, ordinal property, or property named last, will invoke observe callback when set the named oproperty", ^{
-                TestNamedTuple *namedTuple = makeTestNamedTuple(@"str", @1, @{@"a": @"b"});
+                TestNamedTuple *namedTuple = TestNamedTupleMake(@"str", @1, @{@"a": @"b"});
                 
                 id observer1 = mock(NSObject.class);
                 id observer2 = mock(NSObject.class);
@@ -132,7 +132,7 @@ describe(@"named tuple tests", ^{
         });
         
         it(@"can observe named property, ordinal property, or property named last, will invoke observe callback when set the ordinal oproperty", ^{
-            TestNamedTuple *namedTuple = makeTestNamedTuple(@"str", @1, @{@"a": @"b"});
+            TestNamedTuple *namedTuple = TestNamedTupleMake(@"str", @1, @{@"a": @"b"});
             
             id observer1 = mock(NSObject.class);
             id observer2 = mock(NSObject.class);
@@ -182,7 +182,7 @@ describe(@"named tuple tests", ^{
         });
         
         it(@"can observe named property, ordinal property, or property named last, will invoke observe callback when set the oproperty named last", ^{
-            TestNamedTuple *namedTuple = makeTestNamedTuple(@"str", @1, @{@"a": @"b"});
+            TestNamedTuple *namedTuple = TestNamedTupleMake(@"str", @1, @{@"a": @"b"});
             
             id observer1 = mock(NSObject.class);
             id observer2 = mock(NSObject.class);
@@ -233,7 +233,7 @@ describe(@"named tuple tests", ^{
         
         context(@"subscript", ^{
             it(@"can access subscript", ^{
-                TestNamedTuple *namedTuple = makeTestNamedTuple(@"str", @1, @{@"a": @"b"});
+                TestNamedTuple *namedTuple = TestNamedTupleMake(@"str", @1, @{@"a": @"b"});
                 
                 expect(namedTuple[0]).to.equal(@"str");
                 expect(namedTuple[1]).to.equal(@1);
@@ -245,7 +245,7 @@ describe(@"named tuple tests", ^{
             });
             
             it(@"can invoke KVO using subscript", ^{
-                TestNamedTuple *namedTuple = makeTestNamedTuple(@"str", @1, @{@"a": @"b"});
+                TestNamedTuple *namedTuple = TestNamedTupleMake(@"str", @1, @{@"a": @"b"});
                 
                 id observer = mock(NSObject.class);
                 
@@ -267,7 +267,7 @@ describe(@"named tuple tests", ^{
             });
             
             it(@"will raise an assert if access over subscript", ^{
-                TestNamedTuple *namedTuple = makeTestNamedTuple(@"str", @1, @{@"a": @"b"});
+                TestNamedTuple *namedTuple = TestNamedTupleMake(@"str", @1, @{@"a": @"b"});
                 id assertHandler = mock(NSAssertionHandler.class);
                 
                 [[[NSThread currentThread] threadDictionary] setValue:assertHandler
@@ -299,7 +299,7 @@ describe(@"named tuple tests", ^{
         
         context(@"fast enumeration", ^{
             it(@"can use for in to access tuple", ^{
-                TestNamedTuple *namedTuple = makeTestNamedTuple(@"str", @1, @{@"a": @"b"});
+                TestNamedTuple *namedTuple = TestNamedTupleMake(@"str", @1, @{@"a": @"b"});
                 
                 NSMutableArray *array = [NSMutableArray array];
                 
@@ -310,7 +310,7 @@ describe(@"named tuple tests", ^{
             });
             
             it(@"can use for(;;) to access tuple", ^{
-                TestNamedTuple *namedTuple = makeTestNamedTuple(@"str", @1, @{@"a": @"b"});
+                TestNamedTuple *namedTuple = TestNamedTupleMake(@"str", @1, @{@"a": @"b"});
                 
                 NSMutableArray *array = [NSMutableArray array];
                 
@@ -322,7 +322,7 @@ describe(@"named tuple tests", ^{
             });
             
             it(@"can access nil item use for-in", ^{
-                TestNamedTuple *namedTuple = makeTestNamedTuple(@"str", @1, nil);
+                TestNamedTuple *namedTuple = TestNamedTupleMake(@"str", @1, nil);
                 
                 NSMutableArray *array = [NSMutableArray array];
                 
@@ -337,7 +337,7 @@ describe(@"named tuple tests", ^{
             });
             
             it(@"will raise error if modify any item when enumeration", ^{
-                TestNamedTuple *namedTuple = makeTestNamedTuple(@"str", @1, @{@"a": @"b"});
+                TestNamedTuple *namedTuple = TestNamedTupleMake(@"str", @1, @{@"a": @"b"});
                 
                 objc_setEnumerationMutationHandler(enumerationMutationHandler);
                 
@@ -355,7 +355,7 @@ describe(@"named tuple tests", ^{
         
         context(@"copy", ^{
             it(@"can copy to get a cloned one", ^{
-                TestNamedTuple *namedTuple = makeTestNamedTuple(@"str", @1, @{@"a": @"b"});
+                TestNamedTuple *namedTuple = TestNamedTupleMake(@"str", @1, @{@"a": @"b"});
                 TestNamedTuple *namedTupleCopied = [namedTuple copy];
                 
                 expect(namedTupleCopied.string).to.equal(@"str");
@@ -369,14 +369,14 @@ describe(@"named tuple tests", ^{
         
         context(@"join", ^{
             it(@"can join two tuples use method join:", ^{
-                TestNamedTuple *namedTuple1 = makeTestNamedTuple(@"str", @1, @{@"a": @"b"});
-                TestNamedTuple *namedTuple2 = makeTestNamedTuple(@"hello", @2, @{});
+                TestNamedTuple *namedTuple1 = TestNamedTupleMake(@"str", @1, @{@"a": @"b"});
+                TestNamedTuple *namedTuple2 = TestNamedTupleMake(@"hello", @2, @{});
                 
                 expect([namedTuple1 join:namedTuple2]).to.equal(EZTuple(@"str", @1, @{@"a": @"b"}, @"hello", @2, @{}));
             });
             
             it(@"can use extend macro add some new item to exist tuple", ^{
-                TestNamedTuple *namedTuple = makeTestNamedTuple(@"str", @1, @{@"a": @"b"});
+                TestNamedTuple *namedTuple = TestNamedTupleMake(@"str", @1, @{@"a": @"b"});
                 EZTuple5 *tuple = EZTupleExtend(namedTuple, @4, @5);
                 
                 expect(tuple).to.equal(EZTuple(@"str", @1, @{@"a": @"b"}, @4, @5));
@@ -385,19 +385,19 @@ describe(@"named tuple tests", ^{
         
         context(@"take & drop", ^{
             it(@"can take first N item from tuple", ^{
-                TestNamedTuple *namedTuple = makeTestNamedTuple(@"str", @1, @{@"a": @"b"});
+                TestNamedTuple *namedTuple = TestNamedTupleMake(@"str", @1, @{@"a": @"b"});
                 
                 expect([namedTuple take:2]).to.equal(EZTuple(@"str", @1));
             });
             
             it(@"should get a clone if taken N is larger than tuple's count", ^{
-                TestNamedTuple *namedTuple = makeTestNamedTuple(@"str", @1, @{@"a": @"b"});
+                TestNamedTuple *namedTuple = TestNamedTupleMake(@"str", @1, @{@"a": @"b"});
                 
                 expect([namedTuple take:7]).to.equal(EZTuple(@"str", @1, @{@"a": @"b"}));
             });
             
             it(@"should raise an assert if N is 0", ^{
-                TestNamedTuple *namedTuple = makeTestNamedTuple(@"str", @1, @{@"a": @"b"});
+                TestNamedTuple *namedTuple = TestNamedTupleMake(@"str", @1, @{@"a": @"b"});
                 id assertHandler = mock(NSAssertionHandler.class);
                 
                 [[[NSThread currentThread] threadDictionary] setValue:assertHandler
@@ -418,13 +418,13 @@ describe(@"named tuple tests", ^{
             });
             
             it(@"can drop first N itme from tuple", ^{
-                TestNamedTuple *namedTuple = makeTestNamedTuple(@"str", @1, @{@"a": @"b"});
+                TestNamedTuple *namedTuple = TestNamedTupleMake(@"str", @1, @{@"a": @"b"});
                 
                 expect([namedTuple drop:1]).to.equal(EZTuple(@1, @{@"a": @"b"}));
             });
             
             it(@"should raise an assert if N is larger or equal than tuple's count", ^{
-                TestNamedTuple *namedTuple = makeTestNamedTuple(@"str", @1, @{@"a": @"b"});
+                TestNamedTuple *namedTuple = TestNamedTupleMake(@"str", @1, @{@"a": @"b"});
                 id assertHandler = mock(NSAssertionHandler.class);
                 
                 [[[NSThread currentThread] threadDictionary] setValue:assertHandler
@@ -445,7 +445,7 @@ describe(@"named tuple tests", ^{
             });
             
             it(@"should get a clone if drop N is zero", ^{
-                TestNamedTuple *namedTuple = makeTestNamedTuple(@"str", @1, @{@"a": @"b"});
+                TestNamedTuple *namedTuple = TestNamedTupleMake(@"str", @1, @{@"a": @"b"});
                 
                 expect([namedTuple drop:0]).to.equal(EZTuple(@"str", @1, @{@"a": @"b"}));
             });
@@ -453,13 +453,13 @@ describe(@"named tuple tests", ^{
         
         context(@"tuple and array convert", ^{
             it(@"can convert a tuple to an array", ^{
-                TestNamedTuple *namedTuple = makeTestNamedTuple(@"str", @1, @{@"a": @"b"});
+                TestNamedTuple *namedTuple = TestNamedTupleMake(@"str", @1, @{@"a": @"b"});
                 
                 expect([namedTuple allObjects]).to.equal(@[@"str", @1, @{@"a": @"b"}]);
             });
             
             it(@"should use NSNull instead nil when convert to an array", ^{
-                TestNamedTuple *namedTuple = makeTestNamedTuple(@"str", nil, @{@"a": @"b"});
+                TestNamedTuple *namedTuple = TestNamedTupleMake(@"str", nil, @{@"a": @"b"});
                 
                 expect([namedTuple allObjects]).to.equal(@[@"str", NSNull.null, @{@"a": @"b"}]);
             });
@@ -467,25 +467,25 @@ describe(@"named tuple tests", ^{
             it(@"can convert an array to a tuple", ^{
                 TestNamedTuple *namedTuple = [TestNamedTuple tupleWithArray:@[@"str", @1, @{@"a": @"b"}]];
                 
-                expect(namedTuple).to.equal(makeTestNamedTuple(@"str", @1, @{@"a": @"b"}));
+                expect(namedTuple).to.equal(TestNamedTupleMake(@"str", @1, @{@"a": @"b"}));
             });
             
             it(@"should use nil instead NSNull when convert to a tuple", ^{
                 TestNamedTuple *namedTuple = [TestNamedTuple tupleWithArray:@[@"str", NSNull.null, @{@"a": @"b"}]];
                 
-                expect(namedTuple).to.equal(makeTestNamedTuple(@"str", nil, @{@"a": @"b"}));
+                expect(namedTuple).to.equal(TestNamedTupleMake(@"str", nil, @{@"a": @"b"}));
             });
         });
         
         context(@"others", ^{
             it(@"will show description like NSArray", ^{
-                TestNamedTuple *namedTuple = makeTestNamedTuple(@"str", @1, @{@"a": @"b"});
+                TestNamedTuple *namedTuple = TestNamedTupleMake(@"str", @1, @{@"a": @"b"});
                 
                 expect(namedTuple.description).to.equal([NSString stringWithFormat:@"<TestNamedTuple: %p>(\n\tstring = str;\n\tnumber = 1;\n\tdictionary = {\n    a = b;\n};\n)", namedTuple]);
             });
             
             it(@"will show nil as null", ^{
-                TestNamedTuple *namedTuple = makeTestNamedTuple(@"str", @1, nil);
+                TestNamedTuple *namedTuple = TestNamedTupleMake(@"str", @1, nil);
                 
                 expect(namedTuple.description).to.equal([NSString stringWithFormat:@"<TestNamedTuple: %p>(\n\tstring = str;\n\tnumber = 1;\n\tdictionary = nil;\n)", namedTuple]);
             });
@@ -494,7 +494,7 @@ describe(@"named tuple tests", ^{
 
     context(@"with generic", ^{
         it(@"can create a generic named tuple", ^{
-            TestNamedTupleWithGeneric<NSNumber *, NSString *, NSString *> *generic = makeTestNamedTupleWithGeneric(@[@1, @2, @3], @{@"a": @"b", @"c": @"d"});
+            TestNamedTupleWithGeneric<NSNumber *, NSString *, NSString *> *generic = TestNamedTupleWithGenericMake(@[@1, @2, @3], @{@"a": @"b", @"c": @"d"});
             expect(generic.arr).to.equal(@[@1, @2, @3]);
             expect(generic.arr.lastObject.stringValue).to.equal(@"3");
             expect(generic.dic).to.equal(@{@"a": @"b", @"c": @"d"});
