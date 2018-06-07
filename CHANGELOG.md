@@ -1,37 +1,19 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [1.2.0] - 2017-09-27
+## [1.1.0] - 2018-05-24
 
 ### Added
 
-- you can create a new tuple with +[ZTupleBase tupleWithCount:]
+- named tuple
+- you can create a named tuple with XXXNamedTupleMake
+- named tuple have all tuple features
 
-### Removed
+### Changed
 
-- remove _Pods.xcodeproj soft link file for some project which doesn't suppot it
+- dictionary-like description
 
-## [1.1.0] - 2017-09-12
-
-### Added
-
-- you can get count using '- (NSUInteger)count'
-- take some items and drop some items to get a new tuple
-- extend item
-- join two tuples
-- convert a tuple to an array or convert an array to a tuple
-- support tvOS and watchOS
-
-### Removed
-
-- no more dependent 'libextobjc'
-
-### Fixed
-
-- isEqual is correct now
-- some typing error
-
-## [1.0.0] - 2017-08-18
+## [1.0.0] - 2017-09-27
 
 ## Added
 
@@ -40,3 +22,10 @@ All notable changes to this project will be documented in this file.
 - using subscripts to access items
 - using for-in to access itmes
 - support NSCopy protocol
+- get count using '- (NSUInteger)count'
+- take some items and drop some items to get a new tuple
+- extend an item
+- join two tuples
+- convert a tuple to an array or vice versa an array to a tuple
+- support tvOS and watchOS
+- create a new tuple with +[ZTupleBase tupleWithCount:]
