@@ -154,6 +154,7 @@ WilliamZang, chengwei.zang.1985@gmail.com
 
 JohnnyWu, johnny.wjy07@gmail.com
 
+ValiantCat, 519224747@qq.com
 
 
 ## License
