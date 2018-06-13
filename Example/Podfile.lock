@@ -1,5 +1,5 @@
 PODS:
-  - EasyTuple (1.1.0)
+  - EasyTuple (1.1.1)
   - Expecta (1.0.6)
   - OCHamcrest (7.1.0)
   - OCMockito (5.1.0):
@@ -24,7 +24,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  EasyTuple: 14ee25968f01b91a76f4dd9e6af4df168ce35c44
+  EasyTuple: 1064cc2885dd93b59ff79678e4ab4a7b385de17d
   Expecta: 3b6bd90a64b9a1dcb0b70aa0e10a7f8f631667d5
   OCHamcrest: f91040b9a78196a9e26bc831265dda5ab6839590
   OCMockito: f420d00dc5ffbb7452f9f499cd1766e6583d61a5

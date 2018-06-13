@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.1.1] - 2018-06-13
+
+### Fixed
+
+- fix compile warning which named tuple's property is block
+- fix  compile errors which named tuple's property is id<SomeProtocol>
+
 ## [1.1.0] - 2018-05-24
 
 ### Added
