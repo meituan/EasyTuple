@@ -11,3 +11,8 @@
 EZTNamedTupleImp(TestNamedTuple)
 
 EZTNamedTupleImp(TestNamedTupleWithGeneric)
+
+EZTNamedTupleImp(TestBlockNamedTuple)
+
+EZTNamedTupleImp(TestProtocolNamedTuple)
+

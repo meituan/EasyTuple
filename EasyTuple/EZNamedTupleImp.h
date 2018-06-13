@@ -49,10 +49,13 @@ FOUNDATION_EXPORT _ClassName_ * EZ_CONCAT(_ClassName_, Make)(EZT_NamedPropertyPa
 
 #define EZT_descriptionProperty(_, _propertyName_) \
 [description appendString:@"\t" EZ_STRINGIFY(_propertyName_) @" = "]; \
-[description appendString:[self. _propertyName_ description] ?: @"nil"]; \
+[description appendString:[(id)self. _propertyName_ description] ?: @"nil"]; \
 [description appendString:@";\n"]; \
 
 #define _EZTNamedTupleImp(_ClassName_) \
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Wmismatched-return-types\"") \
+_Pragma("clang diagnostic ignored \"-Wmismatched-parameter-types\"") \
 @implementation _ClassName_ \
 EZ_FOR_EACH(EZT_GetterAndSetter, ;, EZT_NamedPropertyNameList(EZT_TableName(_ClassName_))) \
 \
@@ -65,4 +68,5 @@ EZ_FOR_EACH(EZT_GetterAndSetter, ;, EZT_NamedPropertyNameList(EZT_TableName(_Cla
 @end \
 _ClassName_ * EZ_CONCAT(_ClassName_, Make)(EZT_NamedPropertyParamsList(EZT_TableName(_ClassName_))) { \
     return EZTupleAs(_ClassName_, EZT_NamedPropertyNameList(EZT_TableName(_ClassName_))); \
-}
+} \
+_Pragma("clang diagnostic pop")

@@ -20,3 +20,13 @@ _(NSArray<T> *, arr) \
 _(NSDictionary<K, V> *, dic);
 
 EZTNamedTupleDef(TestNamedTupleWithGeneric, T, K, V)
+
+#define TestBlockNamedTupleTable(_) \
+_(dispatch_block_t, block);
+
+EZTNamedTupleDef(TestBlockNamedTuple)
+
+#define TestProtocolNamedTupleTable(_) \
+_(id<NSCopying>, key);
+
+EZTNamedTupleDef(TestProtocolNamedTuple)
