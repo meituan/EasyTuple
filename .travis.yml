@@ -11,5 +11,4 @@ before_install:
 - pod install --project-directory=Example --repo-update
 script:
 - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/ZTuple.xcworkspace -scheme iOSTests -sdk iphonesimulator11.0 -destination 'platform=iOS Simulator,name=iPhone 6s Plus,OS=11.0' ONLY_ACTIVE_ARCH=NO | xcpretty
-- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/ZTuple.xcworkspace -scheme MacTests -sdk macosx ONLY_ACTIVE_ARCH=NO CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty
 - pod lib lint
