@@ -59,6 +59,20 @@ describe(@"tuple tests", ^{
             expect(d).to.equal(@4);
         });
         
+        it(@"can unpack tuple with block using macro", ^{
+            dispatch_block_t block = ^{
+                NSLog(@"");
+            };
+            EZTuple4<NSNumber *, NSNumber *, dispatch_block_t, NSNumber *> *tuple = EZTuple(@1, @2, block, @4);
+            
+            EZTupleUnpack(NSNumber *a, NSNumber *b, dispatch_block_t aBlock, NSNumber *d, EZT_FromVar(tuple));
+            
+            expect(a).to.equal(@1);
+            expect(b).to.equal(@2);
+            expect(aBlock).to.beIdenticalTo(block);
+            expect(d).to.equal(@4);
+        });
+
         it(@"can invoke KVO", ^{
             EZTuple3 *tuple = EZTuple(@1, @2, @3);
             

@@ -59,6 +59,17 @@ describe(@"named tuple tests", ^{
                 expect(c).to.equal(@{@"a": @"b"});
             });
             
+            it(@"can unpack tuple with block using macro", ^{
+                dispatch_block_t block = ^{
+                    NSLog(@"");
+                };
+                TestBlockNamedTuple *namedTuple = TestBlockNamedTupleMake(block);
+                
+                EZTupleUnpack(dispatch_block_t aBlock,  EZT_FromVar(namedTuple));
+                
+                expect(aBlock).to.beIdenticalTo(block);
+            });
+
             it(@"can invoke KVO", ^{
                 TestNamedTuple *namedTuple = TestNamedTupleMake(@"str", @1, @{@"a": @"b"});
                 
