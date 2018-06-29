@@ -52,7 +52,16 @@ GetterType getterTable[] = {
 }
 
 + (__kindof EZTupleBase *)tupleWithCount:(NSUInteger)count {
-    Class tupleClass = NSClassFromString([NSString stringWithFormat:@"EZTuple%lu", (unsigned long)count]);
+#define TUPLE_CLASS(_COUNT_)    "EZTuple" EZ_STRINGIFY(_COUNT_)
+#define CLASS_TABLE             EZ_FOR_COMMA(20, TUPLE_CLASS)
+    static const char *classNames[] = {
+        CLASS_TABLE
+    };
+#undef CLASS_TABLE
+#undef TUPLE_CLASS
+    NSAssert(count <= 20 && count != 0, @"There is only 20 tuple classes.");
+    const char *className = classNames[count];
+    Class tupleClass = objc_getClass(className);
     EZTupleBase *tuple = [tupleClass new];
     return tuple;
 }
@@ -123,15 +132,14 @@ GetterType getterTable[] = {
     return YES;
 }
 
-- (__kindof EZTupleBase *)join:(EZTupleBase *)other { 
+- (__kindof EZTupleBase *)join:(EZTupleBase *)other {
     NSUInteger selfCount = self.count;
     NSUInteger otherTupleCount = other.count;
     NSAssert(selfCount + otherTupleCount <= 20, @"two tuple items count added cannot larger than 20");
     if (selfCount + otherTupleCount > 20) {
         return nil;
     }
-    Class class = NSClassFromString([NSString stringWithFormat:@"EZTuple%@", @(selfCount + otherTupleCount)]);
-    EZTupleBase *newInstance = [class new];
+    EZTupleBase *newInstance = [EZTupleBase tupleWithCount:selfCount + otherTupleCount];
     for (int i = 0; i < selfCount; ++i) {
         newInstance[i] = self[i];
     }
@@ -149,9 +157,7 @@ GetterType getterTable[] = {
     if (count >= self.count) {
         return [self copy];
     }
-    
-    Class class = NSClassFromString([NSString stringWithFormat:@"EZTuple%@", @(count)]);
-    EZTupleBase *newInstance = [class new];
+    EZTupleBase *newInstance = [EZTupleBase tupleWithCount:count];
     for (int i = 0; i < count; ++i) {
         newInstance[i] = self[i];
     }
@@ -167,9 +173,7 @@ GetterType getterTable[] = {
     if (count == 0) {
         return [self copy];
     }
-    
-    Class class = NSClassFromString([NSString stringWithFormat:@"EZTuple%@", @(selfCount - count)]);
-    EZTupleBase *newInstance = [class new];
+    EZTupleBase *newInstance = [EZTupleBase tupleWithCount:selfCount - count];
     for (int i = 0; i + count < selfCount; ++i) {
         newInstance[i] = self[i + count];
     }
