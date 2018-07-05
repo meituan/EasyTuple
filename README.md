@@ -1,5 +1,5 @@
 <p align="center">
-	<a href="https://github.com/meituan/EasyTuple"><img src="Logo/logo.png" alt="EasyTuple" /></a>
+	<a href="https://github.com/meituan/EasyTuple"><img src="https://github.com/meituan/EasyTuple/raw/master/Logo/logo.png" alt="EasyTuple" /></a>
 </p>
 <br />
 
