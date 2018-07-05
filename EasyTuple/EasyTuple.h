@@ -1,8 +1,8 @@
 //
-//  Easy.h
-//  Expecta
+//  EasyTuple.h
 //
 //  Created by Chengwei Zang on 2017/8/6.
+//  Copyright (c) 2017 Beijing Sankuai Online Technology Co.,Ltd (Meituan)
 //
 
 #import <Foundation/Foundation.h>

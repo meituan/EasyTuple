@@ -1,6 +1,6 @@
 use_frameworks!
 
-target 'ZTuple_iOS_Tests' do
+target 'EasyTuple_iOS_Tests' do
   pod 'EasyTuple', :path => '../'
   
   pod 'Specta', '~> 1.0'
@@ -8,7 +8,7 @@ target 'ZTuple_iOS_Tests' do
   pod 'OCMockito', '~> 5.0'
 end
 
-target 'ZTuple_macOS_Tests' do
+target 'EasyTuple_macOS_Tests' do
   pod 'EasyTuple', :path => '../'
     
   pod 'Specta', '~> 1.0'

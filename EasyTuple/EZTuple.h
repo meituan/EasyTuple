@@ -1,8 +1,8 @@
 //
 //  EZTuple.h
-//  Pods
 //
 //  Created by William Zang on 2018/5/15.
+//  Copyright (c) 2017 Beijing Sankuai Online Technology Co.,Ltd (Meituan)
 //
 
 #import <EasyTuple/EZMetaMacros.h>

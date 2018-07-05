@@ -1,9 +1,9 @@
-    //
-    //  ZTupleSubClass.m
-    //  Expecta-iOS
-    //
-    //  Created by Chengwei Zang on 2017/8/22.
-    //
+//
+//  EZTupleSubClass.m
+//
+//  Created by Chengwei Zang on 2017/8/22.
+//  Copyright (c) 2017 Beijing Sankuai Online Technology Co.,Ltd (Meituan)
+//
 
 #import "EZTupleSubClasses.h"
 @import ObjectiveC.runtime;

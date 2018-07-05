@@ -1,15 +1,16 @@
-# EasyTuple
+<p align="center">
+	<a href="https://github.com/meituan/EasyTuple"><img src="Logo/logo.png" alt="EasyTuple" /></a>
+</p>
+<br />
 
-[![Build Status](https://travis-ci.org/EasyReactFramework/EasyTuple.svg?branch=master)](https://travis-ci.org/EasyReactFramework/EasyTuple)
+[![Build Status](https://travis-ci.org/meituan/EasyTuple.svg?branch=master)](https://travis-ci.org/meituan/EasyTuple)
 [![Version](https://img.shields.io/cocoapods/v/EasyTuple.svg?style=flat)](http://cocoapods.org/pods/EasyTuple)
 [![License](https://img.shields.io/cocoapods/l/EasyTuple.svg?style=flat)](http://cocoapods.org/pods/EasyTuple)
 [![Platform](https://img.shields.io/cocoapods/p/EasyTuple.svg?style=flat)](http://cocoapods.org/pods/EasyTuple)
 
-
 ## Why you need it
 
-Sometimes you may need to return multiple values other than just one. In these cases, you can use a pointer, like `NSError **`, or you can put them into an array or a dictionary, or straightforward, create a class for it. But you have another choice now, EasyTuple, it can group multiple values in a better way. 
-
+Sometimes you may need to return multiple values other than just one. In these cases, you can use a pointer, like `NSError **`, or you can put them into an array or a dictionary, or straightforward, create a class for it. But you have another choice now, EasyTuple, it can group multiple values in a better way.
 
 ## How to use it
 
@@ -23,8 +24,7 @@ EZTuple3<NSNumber *, NSString *, NSDictionary> *tuple = EZTuple(@1, @"string", n
 
 The maximum capacity of EZTuple is 20. It is big enough in most cases. If you really need something larger than that, an array or a dictionary might be a better choice at the moment.
 
-
-You have serval ways to get and set values: 
+You have serval ways to get and set values:
 
 ```objective-c
 EZTuple3<NSNumber *, NSString *, NSDictionary> *tuple = EZTuple(@1, @"string", nil);
@@ -52,13 +52,13 @@ for (id value in tuple) {
 
 The `last`of the tuple is an alias of the "last element", in the sample code above, it is equivalent to `second`.
 
-All the elements inside the tuple are Key-Value Observable. If you observe `second` and `last`, both callbacks will be invoked if you changed `second` (or `last`). 
+All the elements inside the tuple are Key-Value Observable. If you observe `second` and `last`, both callbacks will be invoked if you changed `second` (or `last`).
 
 EZTuple supports `NSCopying` protocol. You can easily copy them if you need.
 
 ## Named tuples
 
-The tuple classes from `EZTuple1` to `EZTuple20` only have properties `first`, `second`, etc. You may need to give the properties custom names. Named tuple can help you. 
+The tuple classes from `EZTuple1` to `EZTuple20` only have properties `first`, `second`, etc. You may need to give the properties custom names. Named tuple can help you.
 
 Each named tuple is a class. So you may declare it like this:
 
@@ -112,17 +112,18 @@ EZTNamedTupleDef(TestNamedTupleWithGeneric, T, K, V)
 
 ## Features
 
-* EZTuple macro create a tuple quickly
-* ordinal number properties
-* subscripts accessing
-* for-in accessing
-* NSScopy protocol supporting
-* drop some item or take some item
-* join two tuples
-* convert a tuple to an array or convert an array to a tuple
-* declare named tuple
+* [x] EZTuple macro create a tuple quickly
+* [x] ordinal number properties
+* [x] subscripts accessing
+* [x] for-in accessing
+* [x] NSScopy protocol supporting
+* [x] drop some item or take some item
+* [x] join two tuples
+* [x] convert a tuple to an array or convert an array to a tuple
+* [x] declare named tuple
 
 ## Advantages
+
 Compare to NSArray / NSDictionary, EZTuple has the following advantages:
 
 * Supports generics for EACH element
@@ -131,6 +132,7 @@ Compare to NSArray / NSDictionary, EZTuple has the following advantages:
 * Access elements via ordinal numbers and `last`
 
 ## Acknowledgement
+
 This library is highly inspired by the macro techniques in libextobjc.
 
 ## Example
@@ -155,7 +157,6 @@ WilliamZang, chengwei.zang.1985@gmail.com
 JohnnyWu, johnny.wjy07@gmail.com
 
 ValiantCat, 519224747@qq.com
-
 
 ## License
 

@@ -3,7 +3,7 @@
 //  ZTuple_iOS_Tests
 //
 //  Created by William Zang on 2018/5/15.
-//  Copyright © 2018年 WilliamZang. All rights reserved.
+//  Copyright (c) 2017 Beijing Sankuai Online Technology Co.,Ltd (Meituan)
 //
 
 @import EasyTuple;

@@ -1,10 +1,8 @@
 //
-//  ZTupleTests.m
-//  ZTupleTests
+//  EZTupleTests.m
 //
 //  Created by WilliamZang on 08/03/2017.
-//  Copyright (c) 2017 WilliamZang. All rights reserved.
-//
+//  Copyright (c) 2017 Beijing Sankuai Online Technology Co.,Ltd (Meituan)
 
 // https://github.com/Specta/Specta
 

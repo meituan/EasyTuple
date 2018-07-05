@@ -1,8 +1,8 @@
 //
 //  EZTupleBase.h
-//  Expecta
 //
 //  Created by Chengwei Zang on 2017/8/3.
+//  Copyright (c) 2017 Beijing Sankuai Online Technology Co.,Ltd (Meituan)
 //
 
 #import <Foundation/Foundation.h>
