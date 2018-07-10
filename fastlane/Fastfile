@@ -1,0 +1,50 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Tests and report"
+  lane :test_and_report do
+    cocoapods(
+      podfile: 'Example/Podfile',
+      try_repo_update_on_error: true
+    )
+    scan(
+      workspace: 'Example/EasyTuple.xcworkspace',
+      scheme: 'iOSTests',
+      code_coverage: true,
+      devices: ['iPhone 8 Plus'],
+      xcargs: 'ONLY_ACTIVE_ARCH=YES'
+    )
+    pod_lib_lint
+    codecov
+  end
+end
+
+platform :mac do
+  desc "Tests"
+  lane :test do
+    cocoapods(
+      podfile: 'Example/Podfile',
+      try_repo_update_on_error: true
+    )
+    scan(
+      workspace: 'Example/EasyTuple.xcworkspace',
+      scheme: 'MacTests',
+      xcargs: 'ONLY_ACTIVE_ARCH=YES'
+    )
+  end
+end

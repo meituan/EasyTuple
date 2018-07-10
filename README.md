@@ -1,12 +1,10 @@
-<p align="center">
-	<a href="https://github.com/meituan/EasyTuple"><img src="https://github.com/meituan/EasyTuple/raw/master/Logo/logo.png" alt="EasyTuple" /></a>
-</p>
-<br />
+# ![EasyTuple](https://github.com/meituan/EasyTuple/raw/master/Logo/logo.png)
 
-[![Build Status](https://travis-ci.org/meituan/EasyTuple.svg?branch=master)](https://travis-ci.org/meituan/EasyTuple)
+[![Build Status](https://travis-ci.com/meituan/EasyTuple.svg?branch=master)](https://travis-ci.com/meituan/EasyTuple)
 [![Version](https://img.shields.io/cocoapods/v/EasyTuple.svg?style=flat)](http://cocoapods.org/pods/EasyTuple)
 [![License](https://img.shields.io/cocoapods/l/EasyTuple.svg?style=flat)](http://cocoapods.org/pods/EasyTuple)
 [![Platform](https://img.shields.io/cocoapods/p/EasyTuple.svg?style=flat)](http://cocoapods.org/pods/EasyTuple)
+[![codecov](https://codecov.io/gh/meituan/EasyTuple/branch/master/graph/badge.svg)](https://codecov.io/gh/meituan/EasyTuple)
 
 ## Why you need it
 
