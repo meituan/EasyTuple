@@ -53,9 +53,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6003F589195388D20070C39A"
-            BuildableName = "ZTuple_Example.app"
-            BlueprintName = "ZTuple_Example"
+            BlueprintIdentifier = "22994F2520F4F5C900587E34"
+            BuildableName = "EasyTuple_iOS.app"
+            BlueprintName = "EasyTuple_iOS"
             ReferencedContainer = "container:EasyTuple.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -76,9 +76,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6003F589195388D20070C39A"
-            BuildableName = "ZTuple_Example.app"
-            BlueprintName = "ZTuple_Example"
+            BlueprintIdentifier = "22994F2520F4F5C900587E34"
+            BuildableName = "EasyTuple_iOS.app"
+            BlueprintName = "EasyTuple_iOS"
             ReferencedContainer = "container:EasyTuple.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
