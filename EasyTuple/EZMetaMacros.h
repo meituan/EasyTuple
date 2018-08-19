@@ -8,14 +8,13 @@
 #import <Foundation/Foundation.h>
 #import <EasyTuple/EZTupleBase.h>
 
-
-// Origin data
+// Origin data.
 
 #define EZ_ORDINAL_NUMBERS                                   first, second, third, fourth, fifth, sixth, seventh, eighth, ninth, tenth, eleventh, twelfth, thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, eighteenth, nineteenth, twentieth
 #define EZ_ORDINAL_CAP_NUMBERS                               First, Second, Third, Fourth, Fifth, Sixth, Seventh, Eighth, Ninth, Tenth, Eleventh, Twelfth, Thirteenth, Fourteenth, Fifteenth, Sixteenth, Seventeenth, Eighteenth, Nineteenth, Twentieth
 #define EZ_CHARS                                             A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z
 
-// Meta macro method
+// Meta macro method.
 
 #define EZ_STRINGIFY(VALUE)                                  EZ_STRINGIFY_(VALUE)
 #define EZ_STRINGIFY_(VALUE)                                 # VALUE
@@ -64,7 +63,7 @@
 #define EZ_DEC(VAL)                                          EZ_ARG_AT(VAL, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19)
 #define EZ_INC(VAL)                                          EZ_ARG_AT(VAL, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21)
 #define EZ_ARG_COUNT(...)   _EZ_ARG_COUNT(__VA_ARGS__)
-#define _EZ_ARG_COUNT(...)                                    EZ_ARG_AT(20, ##__VA_ARGS__, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0)
+#define _EZ_ARG_COUNT(...)                                   EZ_ARG_AT(20, ##__VA_ARGS__, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0)
 
 #define EZ_TAKE(N, ...)                                      EZ_CONCAT(EZ_TAKE, N)(__VA_ARGS__)
 #define EZ_TAKE0(...)
@@ -315,14 +314,14 @@
 #define EZ_INIT_PARAM(index)                                 EZ_IF_EQ(0, index)(_EZ_INIT_PARAM_FIRST(index))(_EZ_INIT_PARAM(index))
 
 #define EZ_TUPLE_DEF(i)                                                                                                         \
-@interface EZ_CONCAT(EZTuple, i)<EZ_FOR_COMMA(i, EZ_GENERIC_TYPE)> :EZTupleBase                                                     \
-                                                                                                                               \
-EZ_FOR_RECURSIVE(i, EZ_PROPERTY_DEF, ;);                                                                                         \
-                                                                                                                               \
-@property (nonatomic, strong) EZ_CHARS_AT(EZ_DEC(i)) last;                                                                       \
-                                                                                                                               \
-- (instancetype)EZ_CONCAT(initWith, EZ_FOR_SPACE(i, EZ_INIT_PARAM));                                                              \
-                                                                                                                               \
+@interface EZ_CONCAT(EZTuple, i)<EZ_FOR_COMMA(i, EZ_GENERIC_TYPE)> :EZTupleBase                                                 \
+                                                                                                                                \
+EZ_FOR_RECURSIVE(i, EZ_PROPERTY_DEF, ;);                                                                                        \
+                                                                                                                                \
+@property (nonatomic, strong) EZ_CHARS_AT(EZ_DEC(i)) last;                                                                      \
+                                                                                                                                \
+- (instancetype)EZ_CONCAT(initWith, EZ_FOR_SPACE(i, EZ_INIT_PARAM));                                                            \
+                                                                                                                                \
 @end
 
 #define EZ_TUPLE_DEF_FOREACH(index)                          EZ_TUPLE_DEF(EZ_INC(index))
