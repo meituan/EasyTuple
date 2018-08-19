@@ -337,9 +337,9 @@ EZ_FOR_RECURSIVE(i, EZ_PROPERTY_DEF, ;);                                        
 
 #define EZTuple(...)                                         EZTupleAs(EZ_CONCAT(EZTuple, EZ_ARG_COUNT(__VA_ARGS__)), __VA_ARGS__)
 
-#define EZT_FromVar(tuple)                                    (tuple)
+#define EZT_FromVar(tuple)                                   (tuple)
 
-#define EZT_UNPACK(index, param, tuple)                       param = [tuple EZ_ORDINAL_AT(index)]
+#define EZT_UNPACK(index, param, tuple)                      param = [tuple EZ_ORDINAL_AT(index)]
 
 #define EZTupleUnpack(...)                                   EZ_FOR_EACH_CTX_(EZT_UNPACK, ;, EZ_LAST(__VA_ARGS__), EZ_INIT(__VA_ARGS__))
 #define EZ_FOR_EACH_CTX_(...)                                EZ_FOR_EACH_CTX(__VA_ARGS__)
