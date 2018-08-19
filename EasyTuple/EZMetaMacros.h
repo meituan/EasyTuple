@@ -8,14 +8,12 @@
 #import <Foundation/Foundation.h>
 #import <EasyTuple/EZTupleBase.h>
 
-// Origin data.
-
+// Origin data
 #define EZ_ORDINAL_NUMBERS                                   first, second, third, fourth, fifth, sixth, seventh, eighth, ninth, tenth, eleventh, twelfth, thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, eighteenth, nineteenth, twentieth
 #define EZ_ORDINAL_CAP_NUMBERS                               First, Second, Third, Fourth, Fifth, Sixth, Seventh, Eighth, Ninth, Tenth, Eleventh, Twelfth, Thirteenth, Fourteenth, Fifteenth, Sixteenth, Seventeenth, Eighteenth, Nineteenth, Twentieth
 #define EZ_CHARS                                             A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z
 
-// Meta macro method.
-
+// Meta macro method
 #define EZ_STRINGIFY(VALUE)                                  EZ_STRINGIFY_(VALUE)
 #define EZ_STRINGIFY_(VALUE)                                 # VALUE
 
