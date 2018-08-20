@@ -12,15 +12,15 @@
 @import ObjectiveC.runtime;
 
 #define EZT_SETTER_FUNC_DEF(index)                                                                                               \
-static void EZ_CONCAT(setter, index)(EZ_CONCAT(EZTuple, EZ_INC(index)) *tuple, id value) {                                         \
-    tuple. EZ_ORDINAL_AT(index) = value;                                                                                        \
+static void EZ_CONCAT(setter, index)(EZ_CONCAT(EZTuple, EZ_INC(index)) *tuple, id value) {                                       \
+    tuple. EZ_ORDINAL_AT(index) = value;                                                                                         \
 }
 
 EZ_FOR_SPACE(20, EZT_SETTER_FUNC_DEF)
 
 #define EZT_GETTER_FUNC_DEF(index)                                                                                               \
-static id EZ_CONCAT(getter, index)(EZ_CONCAT(EZTuple, EZ_INC(index)) *tuple) {                                                     \
-    return [tuple EZ_ORDINAL_AT(index)];                                                                                        \
+static id EZ_CONCAT(getter, index)(EZ_CONCAT(EZTuple, EZ_INC(index)) *tuple) {                                                   \
+    return [tuple EZ_ORDINAL_AT(index)];                                                                                         \
 }
 
 EZ_FOR_SPACE(20, EZT_GETTER_FUNC_DEF)

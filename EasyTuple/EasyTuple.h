@@ -18,4 +18,3 @@ FOUNDATION_EXPORT const unsigned char EasyTupleVersionString[];
 #import <EasyTuple/EZMetaMacros.h>
 #import <EasyTuple/EZNamedTupleImp.h>
 #import <EasyTuple/EZTuple.h>
-

@@ -10,7 +10,7 @@
 @interface EZTupleBase : NSObject <NSCopying, NSFastEnumeration>
 
 @property (nonatomic, assign) NSUInteger hashValue;
-@property (nonatomic, assign, readonly) NSUInteger count;
+@property (nonatomic, readonly, assign) NSUInteger count;
 
 + (instancetype)tupleWithArray:(NSArray *)array;
 + (__kindof EZTupleBase *)tupleWithCount:(NSUInteger)count;
