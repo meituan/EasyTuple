@@ -15,17 +15,17 @@ Sometimes you may need to return multiple values other than just one. In these c
 You can use the macro `EZTuple` to create a tuple, and it supports generics. Like this:
 
 ```objective-c
-EZTuple3<NSNumber *, NSString *, NSDictionary> *tuple = EZTuple(@1, @"string", nil);
+EZTuple3<NSNumber *, NSString *, NSDictionary *> *tuple = EZTuple(@1, @"string", nil);
 ```
 
-`EZTuple3` means there are 3 items in this tuple. So `EZTuple6` is 6 item. There are 20 classes from `EZTuple1` to `EZTuple20` support you to use.
+`EZTuple3` means there are 3 items in this tuple. So `EZTuple6` has 6 items. There are 20 classes from `EZTuple1` to `EZTuple20` support you to use.
 
 The maximum capacity of EZTuple is 20. It is big enough in most cases. If you really need something larger than that, an array or a dictionary might be a better choice at the moment.
 
 You have serval ways to get and set values:
 
 ```objective-c
-EZTuple3<NSNumber *, NSString *, NSDictionary> *tuple = EZTuple(@1, @"string", nil);
+EZTuple3<NSNumber *, NSString *, NSDictionary *> *tuple = EZTuple(@1, @"string", nil);
 // use the unpack macro
 EZTupleUnpack(NSNumber *a, NSString *b, NSDictionary *c, EZT_FromVar(tuple));
 NSLog(@"first:%@, second:%@, last:%@", a, b, c);
@@ -34,7 +34,7 @@ tuple.first;
 tuple.first = @5;
 // use last
 tuple.last;
-tuple.last = @"last";
+tuple.last = @{@"lastKey":@"lastValue"};
 // use subscript
 tuple[0];
 tuple[0] = @"s";
@@ -48,7 +48,7 @@ for (id value in tuple) {
 // hasNil -> YES
 ```
 
-The `last`of the tuple is an alias of the "last element", in the sample code above, it is equivalent to `second`.
+The `last`of the tuple is an alias of the "last element", in the sample code above, it is equivalent to `third`.
 
 All the elements inside the tuple are Key-Value Observable. If you observe `second` and `last`, both callbacks will be invoked if you changed `second` (or `last`).
 

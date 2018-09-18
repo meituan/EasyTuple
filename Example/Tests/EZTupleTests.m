@@ -315,7 +315,7 @@ describe(@"tuple tests", ^{
              object:tuple1
              file:anything()
              lineNumber:0
-             description:@"two tuple items count added cannot larger than 20"] ;
+             description:@"The sum of two tuple items cannot greater than 20."] ;
             expect(tuple3).to.beNil();
 
             [[[NSThread currentThread] threadDictionary] removeObjectForKey:NSAssertionHandlerKey];

@@ -59,7 +59,7 @@ GetterType getterTable[] = {
     };
 #undef CLASS_TABLE
 #undef TUPLE_CLASS
-    NSAssert(count <= 20 && count != 0, @"There is only 20 tuple classes.");
+    NSAssert(count <= 20 && count != 0, @"There are only 20 tuple classes.");
     const char *className = classNames[count];
     Class tupleClass = objc_getClass(className);
     EZTupleBase *tuple = [tupleClass new];
@@ -135,7 +135,7 @@ GetterType getterTable[] = {
 - (__kindof EZTupleBase *)join:(EZTupleBase *)other {
     NSUInteger selfCount = self.count;
     NSUInteger otherTupleCount = other.count;
-    NSAssert(selfCount + otherTupleCount <= 20, @"two tuple items count added cannot larger than 20");
+    NSAssert(selfCount + otherTupleCount <= 20, @"The sum of two tuple items cannot greater than 20.");
     if (selfCount + otherTupleCount > 20) {
         return nil;
     }
